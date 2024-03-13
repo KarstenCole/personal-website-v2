@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.text-stroke-primary {
+  color: #181A1D;
+	text-shadow: -2px 2px 0 #EEEEEE,
+				  2px 2px 0 #EEEEEE,
+				 2px -2px 0 #EEEEEE,
+				-2px -2px 0 #EEEEEE;
+}
