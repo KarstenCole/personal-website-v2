@@ -11,12 +11,12 @@
 
 .text-stroke-primary {
   color: #181A1D;
-	text-shadow: -2px 2px 0 #EEEEEE,
-				  2px 2px 0 #EEEEEE,
-				 2px -2px 0 #EEEEEE,
-				-2px -2px 0 #EEEEEE;
+	text-shadow: -1px 1px 0 #EEEEEE,
+				  1px 1px 0 #EEEEEE,
+				 1px -1px 0 #EEEEEE,
+				-1px -1px 0 #EEEEEE;  
 }
 
-.clip{
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%, 100% 50%);
+body{
+  background-color: #181A1D;
 }

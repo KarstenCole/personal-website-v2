@@ -10,7 +10,68 @@ const BackgroundBeams = ({ Page }: Props) => {
   const [Backgrounds] = useState({
     Home: {
       Angles: [25, 25, 25, 25, 25, 25],
+      Offsets: ["ml-[1000px]", "", "", "", "", ""],
       AllHoleAreas: [
+        [
+          "mt-[0px]",
+          "h-[200px]",
+          "mt-[20px]",
+          "h-[40px]",
+          "mt-[20px]",
+          "h-[100px]",
+          "mt-[60px]",
+          "h-[250px]",
+          "mt-[70px]",
+          "h-[300px]",
+        ],
+        [
+          "mt-[0px]",
+          "h-[200px]",
+          "mt-[20px]",
+          "h-[40px]",
+          "mt-[20px]",
+          "h-[100px]",
+          "mt-[60px]",
+          "h-[250px]",
+          "mt-[70px]",
+          "h-[300px]",
+        ],
+        [
+          "mt-[0px]",
+          "h-[200px]",
+          "mt-[20px]",
+          "h-[40px]",
+          "mt-[20px]",
+          "h-[100px]",
+          "mt-[60px]",
+          "h-[250px]",
+          "mt-[70px]",
+          "h-[300px]",
+        ],
+        [
+          "mt-[0px]",
+          "h-[200px]",
+          "mt-[20px]",
+          "h-[40px]",
+          "mt-[20px]",
+          "h-[100px]",
+          "mt-[60px]",
+          "h-[250px]",
+          "mt-[70px]",
+          "h-[300px]",
+        ],
+        [
+          "mt-[0px]",
+          "h-[200px]",
+          "mt-[20px]",
+          "h-[40px]",
+          "mt-[20px]",
+          "h-[100px]",
+          "mt-[60px]",
+          "h-[250px]",
+          "mt-[70px]",
+          "h-[300px]",
+        ],
         [
           "mt-[0px]",
           "h-[200px]",
@@ -26,6 +87,7 @@ const BackgroundBeams = ({ Page }: Props) => {
       ],
     },
   });
+
   const [Beams] = useState<number[]>([0, 0, 0, 0, 0, 0]);
   const [CurrPage, setCurrPage] = useState(Backgrounds.Home);
 
@@ -41,15 +103,16 @@ const BackgroundBeams = ({ Page }: Props) => {
   return (
     <div
       id="beam-wrapper"
-      className="absolute top-0 left-0 h-screen overflow-hidden"
+      className="absolute top-0 left-0 h-screen w-full overflow-hidden flex"
     >
       {Beams.map((item, index) => (
         <BackgroundBeam
           key={index}
-          HoleAreas={CurrPage.AllHoleAreas[0]}
+          HoleAreas={CurrPage.AllHoleAreas[index]}
+          Offset={CurrPage.Offsets[index]}
+          Mask=""
         ></BackgroundBeam>
       ))}
-      {/* <BackgroundBeam HoleAreas={CurrPage.AllHoleAreas[0]}></BackgroundBeam> */}
     </div>
   );
 };

@@ -9,14 +9,20 @@ export default {
     ]
 },
   theme: {
-    colors: {
-      background : "#181A1D",
-      primary: "#EEEEEE",
-      secondary: "#C0C0C0",
-      transparent: "transparent",
-
+    extend: {
+      colors: {
+        background : "#181A1D",
+        primary: "#EEEEEE",
+        secondary: "#C0C0C0",
+        transparent: "transparent",
+      },
+      backgroundImage: {
+        'primary-gradient' : "url(src/assets/PrimaryGradient.png)"
+      },
+      backgroundPosition: {
+        'left-top' : "fixed top-0 left-0" 
+      }
     },
-    extend: {},
   },
   plugins: [],
 }
