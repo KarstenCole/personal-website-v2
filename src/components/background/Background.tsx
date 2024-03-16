@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-//import gsap from "gsap";
+import BackgroundBeams from "./BackgroundBeams";
 
 interface Props {
   children: ReactNode;
@@ -35,16 +35,20 @@ const Background = ({ children }: Props) => {
   }, [bgShuffleID, BackgroundTexture, BackgroundTextures]);
 
   return (
-    <div className="bg-background select-none">
-      <div className="absolute top-0 left-0 z-0 h-screen w-full overflow-hidden">
+    <div id="page-wrapper" className="bg-background select-none">
+      <div
+        id="background-wrapper"
+        className="absolute top-0 left-0 z-0 h-screen w-screen overflow-hidden"
+      >
         <img
           id="bg1"
           src={BackgroundTexture}
           alt="Fuzz"
-          className="block"
+          className="object-cover h-full w-full"
           draggable="false"
         />
       </div>
+      <BackgroundBeams Page="Home"></BackgroundBeams>
       <div className="z-10">{children}</div>
     </div>
   );

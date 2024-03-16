@@ -16,3 +16,7 @@
 				 2px -2px 0 #EEEEEE,
 				-2px -2px 0 #EEEEEE;
 }
+
+.clip{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%, 100% 50%);
+}
