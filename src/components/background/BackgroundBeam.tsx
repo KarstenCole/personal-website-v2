@@ -20,7 +20,7 @@ const BackgroundBeams = ({ HoleAreas, Offset, Mask }: Props) => {
         {Holes.map((item, index) => (
           <div
             className={
-              "relative w-full bg-primary-gradient bg-cover " +
+              "relative w-full bg-secondary " +
               item +
               " " +
               HoleAreas[index * 2 + 1] +

@@ -110,7 +110,7 @@ const BackgroundBeams = ({ Page }: Props) => {
           key={index}
           HoleAreas={CurrPage.AllHoleAreas[index]}
           Offset={CurrPage.Offsets[index]}
-          Mask=""
+          Mask="bg-primary-gradient"
         ></BackgroundBeam>
       ))}
     </div>

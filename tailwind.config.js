@@ -17,7 +17,6 @@ export default {
         transparent: "transparent",
       },
       backgroundImage: {
-        'primary-gradient' : "url(src/assets/PrimaryGradient.png)"
       },
       backgroundPosition: {
         'left-top' : "fixed top-0 left-0" 
