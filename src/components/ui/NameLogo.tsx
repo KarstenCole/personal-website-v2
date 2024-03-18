@@ -3,7 +3,7 @@ const NameLogo = () => {
     console.log("click");
   };
   return (
-    <div onClick={handleClick} className="fixed mt-[85px] ml-[85px]">
+    <div onClick={handleClick} className="fixed mt-[85px] ml-[85px] z-10">
       <svg
         width="130"
         height="91"

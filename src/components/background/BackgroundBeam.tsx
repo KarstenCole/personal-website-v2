@@ -2,9 +2,10 @@ interface Props {
   HoleAreas: string[];
   Offset: string;
   Mask?: string;
+  Angle?: string;
 }
 
-const BackgroundBeams = ({ HoleAreas, Offset, Mask }: Props) => {
+const BackgroundBeam = ({ HoleAreas, Offset, Mask, Angle }: Props) => {
   const initializeHoles = () => {
     const Holes: string[] = [];
     for (let i = 0; i < HoleAreas.length; i += 2) {
@@ -15,17 +16,22 @@ const BackgroundBeams = ({ HoleAreas, Offset, Mask }: Props) => {
   const Holes: string[] = initializeHoles();
 
   return (
-    <div id="beam" className={"w-[8px] h-screen bg-transparent " + Offset}>
-      <div id="wrapper">
+    <div
+      id="beam"
+      className={
+        "w-[8px] origin-top-right " + Mask + " " + Offset + " " + Angle
+      }
+    >
+      <div id={"wrapper h-full w-full"}>
         {Holes.map((item, index) => (
           <div
             className={
-              "relative w-full bg-secondary " +
+              "w-[20px] -translate-x-1 " +
               item +
               " " +
               HoleAreas[index * 2 + 1] +
               " " +
-              Mask
+              "bg-background"
             }
             key={index}
           ></div>
@@ -35,4 +41,4 @@ const BackgroundBeams = ({ HoleAreas, Offset, Mask }: Props) => {
   );
 };
 
-export default BackgroundBeams;
+export default BackgroundBeam;
