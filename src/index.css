@@ -25,5 +25,5 @@ body{
   background-image: url("src/assets/PrimaryGradient.png");
   background-attachment: fixed;
   background-position: top left;
-  background-size: cover;
+  background-size:cover;
 }

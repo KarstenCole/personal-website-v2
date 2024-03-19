@@ -38,7 +38,7 @@ const Background = ({ children }: Props) => {
     <div id="page-wrapper" className="select-none -z-50">
       <div
         id="background-wrapper"
-        className="absolute top-0 left-0 z-10 h-screen w-screen overflow-hidden"
+        className="fixed top-0 left-0 z-10 h-screen w-screen overflow-hidden"
       >
         <img
           id="bg1"
