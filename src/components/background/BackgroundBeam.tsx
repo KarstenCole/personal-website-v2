@@ -19,7 +19,7 @@ const BackgroundBeam = ({ HoleAreas, Offset, Mask, Angle }: Props) => {
     <div
       id="beam"
       className={
-        "w-[8px] origin-top-right " + Mask + " " + Offset + " " + Angle
+        "w-[7px] origin-top-right " + Mask + " " + Offset + " " + Angle
       }
     >
       <div id={"wrapper h-full w-full"}>

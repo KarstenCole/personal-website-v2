@@ -9,6 +9,13 @@
   font-style: normal;
 }
 
+.font-manrope {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
 .text-stroke-primary {
   color: #181A1D;
 	text-shadow: -1px 1px 0 #EEEEEE,

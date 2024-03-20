@@ -12,8 +12,10 @@ export default {
     extend: {
       colors: {
         background : "#181A1D",
+        "dark-background": "#131517",
         primary: "#EEEEEE",
         secondary: "#C0C0C0",
+        "light-background": "#393E46",
         transparent: "transparent",
       },
       backgroundImage: {

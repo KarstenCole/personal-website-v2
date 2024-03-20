@@ -44,7 +44,7 @@ const Background = ({ children }: Props) => {
           id="bg1"
           src={BackgroundTexture}
           alt="Fuzz"
-          className="object-cover h-full w-full"
+          className="object-cover h-full w-full z-50"
           draggable="false"
         />
       </div>

@@ -4,16 +4,19 @@ import Home from "./pages/home/Home.tsx";
 import Projects from "./pages/projects/Projects.tsx";
 import WorkHistory from "./pages/work-history/WorkHistory.tsx";
 import NameLogo from "./components/ui/NameLogo.tsx";
+import Background from "./components/background/Background.tsx";
 
 function App() {
   return (
     <>
       <NameLogo></NameLogo>
-      <Home></Home>
-      <AboutMe></AboutMe>
-      <Projects></Projects>
-      <WorkHistory></WorkHistory>
-      <Contact></Contact>
+      <Background>
+        <Home></Home>
+        <AboutMe></AboutMe>
+        <Projects></Projects>
+        <WorkHistory></WorkHistory>
+        <Contact></Contact>
+      </Background>
     </>
   );
 }
