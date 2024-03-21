@@ -7,9 +7,7 @@ interface Props {
 }
 
 const Title = ({ children, textStyle }: Props) => {
-  return (
-    <Header textStyle={"text-primary z-10 " + textStyle}>{children}</Header>
-  );
+  return <Header textStyle={"text-primary " + textStyle}>{children}</Header>;
 };
 
 export default Title;
