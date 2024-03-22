@@ -5,9 +5,19 @@ const WorkHistory = () => {
   return (
     <div className="flex justify-center flex-col items-center mt-24">
       <Header textStyle="text-primary ">Journey</Header>
-      <Timeline style="mt-24">
-        <div className="h-10 w-10 bg-blue-800"></div>
-      </Timeline>
+      <Timeline
+        cardProps={[
+          [
+            "Comik Ink",
+            "src/assets/ComikInk.png",
+            "GRAPHIC DESIGNER",
+            " - Worked as a man and did stuff with stuff in the thing",
+            " - Worked mf",
+            " - did stuff",
+          ],
+        ]}
+        style="mt-24"
+      ></Timeline>
     </div>
   );
 };

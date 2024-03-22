@@ -1,11 +1,11 @@
-import { ReactNode } from "react";
+import TimelineCard from "./TimelineCard";
 
 interface Props {
   style: string;
-  children?: ReactNode;
+  cardProps?: string[][];
 }
 
-const Timeline = ({ style, children }: Props) => {
+const Timeline = ({ style, cardProps }: Props) => {
   return (
     <div className={"flex flex-col items-center z-[1] " + style}>
       <svg
@@ -21,19 +21,22 @@ const Timeline = ({ style, children }: Props) => {
           fill="#EEEEEE"
         />
       </svg>
-      <div className="flex flex-col items-center mt-2">
-        <div className="h-40 w-[12px] bg-primary relative top-0 left-0"></div>
-        <div className="flex flex-row items-center ml-32">
-          <div className="h-[7px] bg-primary w-64"></div>
-          {children}
-        </div>
-      </div>
-      <div className="flex flex-col items-center mt-2">
-        <div className="h-40 w-[12px] bg-primary relative top-0 left-0"></div>
-        <div className="flex flex-row items-center mr-32">
-          {children}
-          <div className="h-[7px] bg-primary w-64"></div>
-        </div>
+      <div className="relative flex flex-col items-center mt-2">
+        <div className="h-[1000px] w-[12px] bg-primary absolute top-0 left-[%]"></div>
+        {cardProps?.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-row items-center ml-[80%] mt-40"
+          >
+            <div key={index} className="h-[7px] bg-primary w-52"></div>
+            <TimelineCard
+              title={item[0]}
+              img={item[1]}
+              subTitle={item[2]}
+              description={[item[3], item[4], item[5]]}
+            ></TimelineCard>
+          </div>
+        ))}
       </div>
     </div>
   );
