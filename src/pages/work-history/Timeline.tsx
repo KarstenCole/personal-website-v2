@@ -1,4 +1,5 @@
 import TimelineCard from "./TimelineCard";
+import SubHeader from "../../components/ui/SubHeader";
 
 interface Props {
   style: string;
@@ -22,18 +23,29 @@ const Timeline = ({ style, cardProps }: Props) => {
         />
       </svg>
       <div className="relative flex flex-col items-center mt-2">
-        <div className="h-[1000px] w-[12px] bg-primary absolute top-0 left-[%]"></div>
+        <div className="h-[1300px] w-[12px] bg-primary absolute top-0 left-[%]"></div>
         {cardProps?.map((item, index) => (
           <div
             key={index}
-            className="flex flex-row items-center ml-[80%] mt-40"
+            className={
+              index % 2 === 0
+                ? "flex flex-row items-center ml-[250px] mt-20"
+                : "flex flex-row-reverse items-center mr-[250px] mt-20"
+            }
           >
+            <SubHeader textStyle="text-secondary m-10">
+              <div className="text-center">
+                {item[3]}
+                <br />
+                {item[4]}
+              </div>
+            </SubHeader>
             <div key={index} className="h-[7px] bg-primary w-52"></div>
             <TimelineCard
               title={item[0]}
               img={item[1]}
               subTitle={item[2]}
-              description={[item[3], item[4], item[5]]}
+              description={[item[4], item[5], item[6]]}
             ></TimelineCard>
           </div>
         ))}
