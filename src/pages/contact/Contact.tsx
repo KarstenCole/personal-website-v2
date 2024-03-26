@@ -1,11 +1,33 @@
 import Header from "../../components/ui/Header.tsx";
+import SubHeader from "../../components/ui/SubHeader.tsx";
+
 import TextField from "./TextField.tsx";
 
 const Contact = () => {
   return (
     <div className="mt-52 flex flex-col items-center">
       <Header textStyle="text-primary mb-20">Contact</Header>
-      <TextField>First:</TextField>
+      <div className="flex flex-col items-center">
+        <div className="flex">
+          <TextField>First:</TextField>
+          <div id="spacer" className="w-20"></div>
+          <TextField>Last:</TextField>
+        </div>
+        <TextField>Email:</TextField>
+        <TextField>Subject:</TextField>
+        <TextField body>Body:</TextField>
+        <div className="w-full text-right">
+          <div className="rounded-lg mb-10">
+            <button className="bg-light-background p-3 pt-2 pb-2 rounded-lg">
+              <SubHeader textStyle="text-secondary text-4xl">Submit</SubHeader>
+            </button>
+          </div>
+        </div>
+        <div className="flex z-[1] w-80 justify-between m-12">
+          <img src="src/assets/linkedin.png" alt="" />
+          <img src="src/assets/github.png" />
+        </div>
+      </div>
     </div>
   );
 };

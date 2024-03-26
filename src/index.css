@@ -28,6 +28,10 @@ body{
   background-color: #181A1D;
 }
 
+html{
+  overflow-x: hidden;
+}
+
 .bg-primary-gradient{
   background-image: url("src/assets/PrimaryGradient.png");
   background-attachment: fixed;
@@ -38,4 +42,8 @@ body{
 input{
   position: relative;
   z-index: 10;
+}
+
+#background-wrapper{
+  pointer-events: none;
 }
