@@ -34,3 +34,8 @@ body{
   background-position: top left;
   background-size:cover;
 }
+
+input{
+  position: relative;
+  z-index: 10;
+}
