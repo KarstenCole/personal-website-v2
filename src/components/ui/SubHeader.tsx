@@ -2,12 +2,15 @@ import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
+  id?: string;
   textStyle?: string;
 }
 
-const SubHeader = ({ children, textStyle }: Props) => {
+const SubHeader = ({ children, textStyle, id }: Props) => {
   return (
-    <div className={"font-outfit text-[45px] " + textStyle}>{children}</div>
+    <div id={id} className={"font-outfit text-[45px] " + textStyle}>
+      {children}
+    </div>
   );
 };
 

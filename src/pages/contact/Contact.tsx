@@ -16,7 +16,7 @@ const Contact = () => {
         <TextField>Email:</TextField>
         <TextField>Subject:</TextField>
         <TextField body>Body:</TextField>
-        <div className="w-full text-right">
+        <div className="w-full text-right z-[1]">
           <div className="rounded-lg mb-10">
             <button className="bg-light-background p-3 pt-2 pb-2 rounded-lg">
               <SubHeader textStyle="text-secondary text-4xl">Submit</SubHeader>

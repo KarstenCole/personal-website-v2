@@ -1,9 +1,18 @@
-const NameLogo = () => {
+interface Props {
+  id?: string;
+  className?: string;
+}
+
+const NameLogo = ({ id, className }: Props) => {
   const handleClick = () => {
     console.log("click");
   };
   return (
-    <div onClick={handleClick} className="fixed mt-[85px] ml-[85px] z-10">
+    <div
+      id={id}
+      onClick={handleClick}
+      className={className ? className : "fixed mt-[85px] ml-[85px] z-10"}
+    >
       <svg
         width="130"
         height="91"
