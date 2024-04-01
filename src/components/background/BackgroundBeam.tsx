@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import gsap from "gsap";
+
 interface Props {
   HoleAreas: string[];
   Offset: string;
@@ -14,6 +17,27 @@ const BackgroundBeam = ({ HoleAreas, Offset, Mask, Angle }: Props) => {
     return Holes;
   };
   const Holes: string[] = initializeHoles();
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const wiggleTimeline = gsap.timeline();
+      console.log();
+      wiggleTimeline
+        .to("#beam", {
+          duration: 1,
+          x: "+=10",
+        })
+        .to("#beam", {
+          duration: 2,
+          x: "-=20",
+        })
+        .to("#beam", {
+          duration: 1,
+          x: "+=10",
+        });
+    });
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div

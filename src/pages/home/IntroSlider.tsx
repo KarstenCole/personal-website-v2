@@ -9,33 +9,28 @@ const IntroSlider = () => {
     const ctx = gsap.context(() => {
       const introTimeline = gsap.timeline();
       introTimeline
-        .to(["#languages", "#descriptors", "#logo"], {
+        .to(["#descriptor1", "#descriptor2", "#descriptor3", "#logo"], {
           opacity: 0,
           duration: 0,
         })
-        .to(["#logo", "#descriptors"], {
+        .to(["#logo", "#descriptor1", "#descriptor2", "#descriptor3"], {
           opacity: 1,
-          duration: 2,
+          duration: 1,
+          stagger: 0.7,
         })
         .to(["#descriptor1", "#descriptor2", "#descriptor3"], {
           x: "+=40",
-          delay: 2,
+          delay: 0,
           opacity: 0,
-          stagger: 0.4,
-        })
-        .to(["#languages"], {
+          stagger: 0.7,
           duration: 1,
-          opacity: 1,
-        })
-        .to(["#language1", "#language2", "#language3"], {
-          x: "+=40",
-          delay: 2,
-          opacity: 0,
-          stagger: 0.4,
+          ease: "power1.out",
         })
         .to("#slider", {
           yPercent: "-100",
-          duration: 2,
+          opacity: 0.9,
+          duration: 1.5,
+          ease: "power2.inOut",
         });
     });
 
@@ -54,21 +49,10 @@ const IntroSlider = () => {
             Developer
           </SubHeader>
           <SubHeader id="descriptor2" textStyle="text-secondary -mt-6">
-            Entrepreneur
-          </SubHeader>
-          <SubHeader id="descriptor3" textStyle="text-secondary -mt-6">
             Designer
           </SubHeader>
-        </div>
-        <div id="languages" className="absolute">
-          <SubHeader id="language1" textStyle="text-secondary">
-            Reactjs
-          </SubHeader>
-          <SubHeader id="language2" textStyle="text-secondary -mt-6">
-            Typescript
-          </SubHeader>
-          <SubHeader id="language3" textStyle="text-secondary -mt-6">
-            Gsap
+          <SubHeader id="descriptor3" textStyle="text-secondary -mt-6">
+            Entrepreneur
           </SubHeader>
         </div>
       </div>
