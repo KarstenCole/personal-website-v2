@@ -10,20 +10,11 @@ import gsap from "gsap";
 // import IntroSlider from "./pages/home/IntroSlider.tsx";
 
 function App() {
-  const [wiggle, setWiggle] = useState(true);
-
-  useEffect(() => {
-    setInterval(() => {
-      setWiggle(!wiggle);
-      console.log("penis");
-    }, 2000);
-  }, []);
-
   return (
     <>
       <NameLogo></NameLogo>
       {/* <IntroSlider></IntroSlider> */}
-      <Background Wiggle={wiggle}>
+      <Background>
         <Home></Home>
         <AboutMe></AboutMe>
         <Projects></Projects>

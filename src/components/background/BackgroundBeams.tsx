@@ -1,4 +1,5 @@
 import BackgroundBeam from "./BackgroundBeam.tsx";
+import gsap from "gsap";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -105,7 +106,6 @@ const BackgroundBeams = ({ Page }: Props) => {
       ],
     },
   });
-  const [Beams] = useState<number[]>([0, 0, 0, 0, 0, 0]);
   const [CurrPage, setCurrPage] = useState(Backgrounds.Home);
 
   //Setting up the Background for the current page
@@ -117,20 +117,90 @@ const BackgroundBeams = ({ Page }: Props) => {
     }
   }, [Page, Backgrounds.Home]);
 
+  //Animating the beams
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      for (let i = 0; i < 6; i++) {
+        const beamName = "#beam" + (i + 1).toString();
+        const delay = Math.random() + i * 0.5;
+        const rand = Math.random() * 10 + 7;
+        const beamMove = "+=" + rand.toString();
+        const beamMoveBack = "-=" + (rand * 2).toString();
+        const beams = gsap.timeline({ repeat: -1, yoyo: true, delay: delay });
+        if (CurrPage == Backgrounds.Home) {
+          beams
+            .to(beamName, {
+              duration: 1.5,
+              x: beamMove,
+              ease: "power1.inOut",
+            })
+            .to(beamName, {
+              duration: 3,
+              x: beamMoveBack,
+              ease: "power1.inOut",
+            })
+            .to(beamName, {
+              duration: 1.5,
+              x: beamMove,
+              ease: "power1.inOut",
+            });
+        } else {
+          beams.pause();
+        }
+      }
+    });
+    return () => {
+      ctx.revert();
+    };
+  }, [CurrPage, Backgrounds]);
+
   return (
     <div
       id="beam-wrapper"
       className={"fixed left-0 h-[125vh] w-full overflow-hidden flex"}
     >
-      {Beams.map((item, index) => (
-        <BackgroundBeam
-          key={index}
-          HoleAreas={CurrPage.AllHoleAreas[index]}
-          Offset={CurrPage.Offsets[index]}
-          Mask="bg-primary-gradient"
-          Angle={CurrPage.Angle}
-        ></BackgroundBeam>
-      ))}
+      <BackgroundBeam
+        id="beam1"
+        HoleAreas={CurrPage.AllHoleAreas[0]}
+        Offset={CurrPage.Offsets[0]}
+        Mask="bg-primary-gradient"
+        Angle={CurrPage.Angle}
+      ></BackgroundBeam>
+      <BackgroundBeam
+        id="beam2"
+        HoleAreas={CurrPage.AllHoleAreas[1]}
+        Offset={CurrPage.Offsets[1]}
+        Mask="bg-primary-gradient"
+        Angle={CurrPage.Angle}
+      ></BackgroundBeam>
+      <BackgroundBeam
+        id="beam3"
+        HoleAreas={CurrPage.AllHoleAreas[2]}
+        Offset={CurrPage.Offsets[2]}
+        Mask="bg-primary-gradient"
+        Angle={CurrPage.Angle}
+      ></BackgroundBeam>
+      <BackgroundBeam
+        id="beam4"
+        HoleAreas={CurrPage.AllHoleAreas[3]}
+        Offset={CurrPage.Offsets[3]}
+        Mask="bg-primary-gradient"
+        Angle={CurrPage.Angle}
+      ></BackgroundBeam>
+      <BackgroundBeam
+        id="beam5"
+        HoleAreas={CurrPage.AllHoleAreas[4]}
+        Offset={CurrPage.Offsets[4]}
+        Mask="bg-primary-gradient"
+        Angle={CurrPage.Angle}
+      ></BackgroundBeam>
+      <BackgroundBeam
+        id="beam6"
+        HoleAreas={CurrPage.AllHoleAreas[5]}
+        Offset={CurrPage.Offsets[5]}
+        Mask="bg-primary-gradient"
+        Angle={CurrPage.Angle}
+      ></BackgroundBeam>
     </div>
   );
 };
