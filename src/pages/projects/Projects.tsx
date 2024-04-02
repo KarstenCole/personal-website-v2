@@ -2,9 +2,13 @@ import UpArrow from "./UpArrow.tsx";
 import ProjectCard from "./ProjectCard.tsx";
 import Title from "./Title.tsx";
 
-const Projects = () => {
+interface Props {
+  id?: string;
+}
+
+const Projects = ({ id }: Props) => {
   return (
-    <div className="flex items-center flex-col mb-20">
+    <div id={id} className="flex items-center flex-col mb-20">
       <UpArrow style="mt-[73px]"></UpArrow>
       <Title textStyle="mt-[73px]">Projects</Title>
       <div className="flex flex-row mt-20 z-[1]">

@@ -7,7 +7,8 @@ import NameLogo from "./components/ui/NameLogo.tsx";
 import Background from "./components/background/Background.tsx";
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
-// import IntroSlider from "./pages/home/IntroSlider.tsx";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 
 function App() {
   const [introAnimationComplete, setIntroAnimationComplete] = useState(false);
@@ -28,6 +29,7 @@ function App() {
 
         //animation
         const introAnimation = gsap.timeline();
+        // const offset = ScrollSmoother.offset();
         introAnimation
           .to(["#down-arrow-dot2", "#down-arrow-dot1", "#down-arrow-head"], {
             y: "-=100",
@@ -40,8 +42,9 @@ function App() {
             ease: "power1.in",
             y: "+=150",
           })
-          .to("#body", {
-            scrollTop: "#projects",
+          .to(window, {
+            scrollTo: "#projects",
+            duration: 1,
           })
           .to(window, {
             duration: 0,
@@ -71,7 +74,7 @@ function App() {
       <Background>
         <Home></Home>
         <AboutMe></AboutMe>
-        <Projects></Projects>
+        <Projects id="projects"></Projects>
         <WorkHistory></WorkHistory>
         <Contact></Contact>
       </Background>
