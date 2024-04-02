@@ -106,7 +106,12 @@ const BackgroundBeams = ({ Page }: Props) => {
       ],
     },
     AboutMe: {},
-    Main: {},
+    Main: {
+      Background: "",
+      Angle: "",
+      Offsets: [],
+      AllHoleAreas: [[]],
+    },
   });
   const [CurrPage, setCurrPage] = useState(Backgrounds.Home);
 
@@ -116,14 +121,18 @@ const BackgroundBeams = ({ Page }: Props) => {
       case "Home":
         setCurrPage(Backgrounds.Home);
         break;
+      case "Main":
+        setCurrPage(Backgrounds.Main);
+        break;
     }
-  }, [Page, Backgrounds.Home]);
+  }, [Page, Backgrounds]);
 
   //Animating the beams
   useEffect(() => {
     const ctx = gsap.context(() => {
       for (let i = 0; i < 6; i++) {
         const beamName = "#beam" + (i + 1).toString();
+        const beamid = document.querySelector(beamName);
         const delay = Math.random() + i * 0.5;
         const rand = Math.random() * 10 + 7;
         const beamMove = "+=" + rand.toString();
@@ -148,6 +157,10 @@ const BackgroundBeams = ({ Page }: Props) => {
             });
         } else {
           beams.pause();
+          if (beamid) {
+            beamid.classList.remove("bg-primary-gradient");
+            beamid.classList.add("bg-secondary-gradient");
+          }
         }
       }
     });
@@ -163,45 +176,45 @@ const BackgroundBeams = ({ Page }: Props) => {
     >
       <BackgroundBeam
         id="beam1"
-        HoleAreas={CurrPage.AllHoleAreas[0]}
-        Offset={CurrPage.Offsets[0]}
+        HoleAreas={Backgrounds.Home.AllHoleAreas[0]}
+        Offset={Backgrounds.Home.Offsets[0]}
         Mask="bg-primary-gradient"
-        Angle={CurrPage.Angle}
+        Angle={Backgrounds.Home.Angle}
       ></BackgroundBeam>
       <BackgroundBeam
         id="beam2"
-        HoleAreas={CurrPage.AllHoleAreas[1]}
-        Offset={CurrPage.Offsets[1]}
+        HoleAreas={Backgrounds.Home.AllHoleAreas[1]}
+        Offset={Backgrounds.Home.Offsets[1]}
         Mask="bg-primary-gradient"
-        Angle={CurrPage.Angle}
+        Angle={Backgrounds.Home.Angle}
       ></BackgroundBeam>
       <BackgroundBeam
         id="beam3"
-        HoleAreas={CurrPage.AllHoleAreas[2]}
-        Offset={CurrPage.Offsets[2]}
+        HoleAreas={Backgrounds.Home.AllHoleAreas[2]}
+        Offset={Backgrounds.Home.Offsets[2]}
         Mask="bg-primary-gradient"
-        Angle={CurrPage.Angle}
+        Angle={Backgrounds.Home.Angle}
       ></BackgroundBeam>
       <BackgroundBeam
         id="beam4"
-        HoleAreas={CurrPage.AllHoleAreas[3]}
-        Offset={CurrPage.Offsets[3]}
+        HoleAreas={Backgrounds.Home.AllHoleAreas[3]}
+        Offset={Backgrounds.Home.Offsets[3]}
         Mask="bg-primary-gradient"
-        Angle={CurrPage.Angle}
+        Angle={Backgrounds.Home.Angle}
       ></BackgroundBeam>
       <BackgroundBeam
         id="beam5"
-        HoleAreas={CurrPage.AllHoleAreas[4]}
-        Offset={CurrPage.Offsets[4]}
+        HoleAreas={Backgrounds.Home.AllHoleAreas[4]}
+        Offset={Backgrounds.Home.Offsets[4]}
         Mask="bg-primary-gradient"
-        Angle={CurrPage.Angle}
+        Angle={Backgrounds.Home.Angle}
       ></BackgroundBeam>
       <BackgroundBeam
         id="beam6"
-        HoleAreas={CurrPage.AllHoleAreas[5]}
-        Offset={CurrPage.Offsets[5]}
+        HoleAreas={Backgrounds.Home.AllHoleAreas[5]}
+        Offset={Backgrounds.Home.Offsets[5]}
         Mask="bg-primary-gradient"
-        Angle={CurrPage.Angle}
+        Angle={Backgrounds.Home.Angle}
       ></BackgroundBeam>
     </div>
   );

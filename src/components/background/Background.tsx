@@ -5,9 +5,10 @@ import BackgroundBeams from "./BackgroundBeams";
 
 interface Props {
   children: ReactNode;
+  page: string;
 }
 
-const Background = ({ children }: Props) => {
+const Background = ({ children, page }: Props) => {
   const [BackgroundTextures] = useState([
     "src/assets/Noise/Noise&Texture4.png",
     "src/assets/Noise/Noise&Texture2.png",
@@ -47,7 +48,7 @@ const Background = ({ children }: Props) => {
           className="object-cover h-full w-full"
         />
       </div>
-      <BackgroundBeams Page="Home"></BackgroundBeams>
+      <BackgroundBeams Page={page}></BackgroundBeams>
       <div id="body" className="z-10">
         {children}
       </div>

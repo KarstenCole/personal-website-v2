@@ -14,6 +14,8 @@ function App() {
   const [introAnimationComplete, setIntroAnimationComplete] = useState(false);
   const handledScroll = useRef(false);
   history.scrollRestoration = "manual";
+  const [page, setPage] = useState("Home");
+  const [highlight, setHighlight] = useState(true);
 
   useLayoutEffect(() => {
     if (!introAnimationComplete) {
@@ -45,7 +47,41 @@ function App() {
           .to(window, {
             scrollTo: "#projects",
             duration: 1,
+            onStart: () => {
+              setPage("Main");
+              setHighlight(false);
+            },
           })
+          .to(
+            "#beam2",
+            {
+              rotate: -25,
+              x: "-=780",
+            },
+            "<"
+          )
+          .to(
+            "#beam3",
+            {
+              x: "-=450",
+            },
+            "<"
+          )
+          .to(
+            "#beam4",
+            {
+              rotate: -25,
+              x: "+=100",
+            },
+            "<"
+          )
+          .to(
+            "#beam5",
+            {
+              x: "+=150",
+            },
+            "<"
+          )
           .to(window, {
             duration: 0,
             onComplete: () => {
@@ -55,6 +91,10 @@ function App() {
               });
               console.log("removed element");
             },
+          })
+          .to("#down-arrow", {
+            duration: 0,
+            y: "-=50",
           });
       }
     };
@@ -70,8 +110,8 @@ function App() {
 
   return (
     <div id="page">
-      <NameLogo id="name-logo"></NameLogo>
-      <Background>
+      <NameLogo id="name-logo" color={highlight}></NameLogo>
+      <Background page={page}>
         <Home></Home>
         <AboutMe></AboutMe>
         <Projects id="projects"></Projects>

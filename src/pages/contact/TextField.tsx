@@ -19,7 +19,7 @@ const TextField = ({ children, body }: Props) => {
       >
         {children}
       </SubHeader>
-      <div className="bg-primary-gradient p-[7px] rounded-lg w-full">
+      <div className="bg-secondary-gradient p-[7px] rounded-lg w-full">
         {!body && (
           <input
             className={

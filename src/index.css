@@ -39,6 +39,13 @@ html{
   background-size:cover;
 }
 
+.bg-secondary-gradient{
+  background-image: url("src/assets/SecondaryGradient.png");
+  background-attachment: fixed;
+  background-position: top left;
+  background-size:cover;
+}
+
 input{
   position: relative;
   z-index: 10;
