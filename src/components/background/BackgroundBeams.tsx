@@ -105,6 +105,8 @@ const BackgroundBeams = ({ Page }: Props) => {
         ],
       ],
     },
+    AboutMe: {},
+    Main: {},
   });
   const [CurrPage, setCurrPage] = useState(Backgrounds.Home);
 

@@ -10,7 +10,7 @@ const Home = () => {
     <>
       <div id="home-page">
         <Title></Title>
-        <DownArrow></DownArrow>
+        <DownArrow id="down-arrow"></DownArrow>
         <AboutMeArrow></AboutMeArrow>
       </div>
     </>

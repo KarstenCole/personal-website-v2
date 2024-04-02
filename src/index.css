@@ -51,3 +51,11 @@ input{
 #slider {
   z-index: 10;
 }
+
+*:not(* > *){
+  overflow: hidden;
+}
+
+.overflow-hidden {
+  overflow: visible !important; /* or any other value you want */
+}

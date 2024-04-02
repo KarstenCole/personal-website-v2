@@ -48,7 +48,9 @@ const Background = ({ children }: Props) => {
         />
       </div>
       <BackgroundBeams Page="Home"></BackgroundBeams>
-      <div className="z-10">{children}</div>
+      <div id="body" className="z-10">
+        {children}
+      </div>
     </div>
   );
 };
