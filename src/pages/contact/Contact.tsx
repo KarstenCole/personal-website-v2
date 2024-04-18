@@ -23,9 +23,9 @@ const Contact = () => {
             </button>
           </div>
         </div>
-        <div className="flex z-[1] w-80 justify-between m-12">
-          <img src="src/assets/linkedin.png" alt="" />
-          <img src="src/assets/github.png" />
+        <div className="flex z-[1] w-64 justify-between m-8 mt-0">
+          <img className="scale-75" src="src/assets/linkedin.png" alt="" />
+          <img className="scale-75" src="src/assets/github.png" />
         </div>
       </div>
     </div>

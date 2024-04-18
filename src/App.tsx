@@ -9,13 +9,16 @@ import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollToPlugin);
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [introAnimationComplete, setIntroAnimationComplete] = useState(false);
-  const handledScroll = useRef(false);
+  const handledIntroScroll = useRef(false);
   history.scrollRestoration = "manual";
   const [page, setPage] = useState("Home");
   const [highlight, setHighlight] = useState(true);
+  // const handledReverseIntroScroll = useRef(false);
 
   useLayoutEffect(() => {
     if (!introAnimationComplete) {
@@ -24,14 +27,94 @@ function App() {
   }, [introAnimationComplete]);
 
   useEffect(() => {
+    if (introAnimationComplete) {
+      //TODO finishin the scrubbing animation
+
+      const reverseIntroAnimation = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#up-arrow",
+          markers: true,
+          start: "top 50%",
+          scrub: true,
+          onEnter: () => {
+            gsap.set(".trigger", { x: 0 }); // Reset the animation
+          },
+          onEnterBack: () => {
+            animationStarted = true;
+          },
+        },
+      });
+
+      reverseIntroAnimation
+        .to(
+          "#beam2",
+          {
+            rotate: 25,
+            x: "-=780",
+            ease: "power1.inOut",
+          },
+          "<"
+        )
+        .to(
+          "#beam3",
+          {
+            x: "-=450",
+            ease: "power1.inOut",
+          },
+          "<"
+        )
+        .to(
+          "#beam4",
+          {
+            rotate: -25,
+            x: "+=100",
+            ease: "power1.inOut",
+          },
+          "<"
+        )
+        .to(
+          "#beam5",
+          {
+            x: "==150",
+            ease: "power1.inOut",
+          },
+          "<"
+        );
+    }
+    // intro animation
     const handleScroll = () => {
       const elements = document.querySelectorAll("*:not(* > *)");
-      if (!introAnimationComplete && !handledScroll.current) {
-        handledScroll.current = true;
+      const introAnimation = gsap.timeline();
+
+      // const targetPosition = window.innerHeight;
+      // const scrollPosition = document.documentElement.scrollTop;
+      // const reverseIntroAnimation = gsap.timeline();]
+      //  if (
+      // //   scrollPosition < targetPosition &&
+      // //   introAnimationComplete &&
+      // //   !handledReverseIntroScroll.current
+      // // ) {
+      // //   handledReverseIntroScroll.current = true;
+      // //   elements.forEach((element) => {
+      // //     element.classList.remove("overflow-visible");
+      // //   });
+      // //   window.scrollTo(0, window.innerHeight);
+
+      // //   reverseIntroAnimation.to(
+      // //     ["#up-arrow-dot2", "#up-arrow-dot1", "#up-arrow-head"],
+      // //     {
+      // //       y: "+=100",
+      // //       duration: 0.5,
+      // //       stagger: 0.1,
+      // //       ease: "power1.inOut",
+      // //     }
+      // //   );
+      //  }
+
+      if (!introAnimationComplete && !handledIntroScroll.current) {
+        handledIntroScroll.current = true;
 
         //animation
-        const introAnimation = gsap.timeline();
-        // const offset = ScrollSmoother.offset();
         introAnimation
           .to(["#down-arrow-dot2", "#down-arrow-dot1", "#down-arrow-head"], {
             y: "-=100",
@@ -55,15 +138,19 @@ function App() {
           .to(
             "#beam2",
             {
+              duration: 1,
               rotate: -25,
               x: "-=780",
+              ease: "power1.inOut",
             },
             "<"
           )
           .to(
             "#beam3",
             {
+              duration: 1,
               x: "-=450",
+              ease: "power1.inOut",
             },
             "<"
           )
@@ -71,14 +158,18 @@ function App() {
             "#beam4",
             {
               rotate: -25,
+              duration: 1,
               x: "+=100",
+              ease: "power1.inOut",
             },
             "<"
           )
           .to(
             "#beam5",
             {
+              duration: 1,
               x: "+=150",
+              ease: "power1.inOut",
             },
             "<"
           )
@@ -87,9 +178,8 @@ function App() {
             onComplete: () => {
               setIntroAnimationComplete(true);
               elements.forEach((element) => {
-                element.classList.add("overflow-hidden");
+                element.classList.add("overflow-visible");
               });
-              console.log("removed element");
             },
           })
           .to("#down-arrow", {

@@ -9,7 +9,7 @@ interface Props {
 const Projects = ({ id }: Props) => {
   return (
     <div id={id} className="flex items-center flex-col mb-20">
-      <UpArrow style="mt-[73px]"></UpArrow>
+      <UpArrow id="up-arrow" style="mt-[73px]"></UpArrow>
       <Title textStyle="mt-[73px]">Projects</Title>
       <div className="flex flex-row mt-20 z-[1]">
         <div className="flex flex-col mr-20">

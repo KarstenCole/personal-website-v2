@@ -12,7 +12,12 @@ const ProjectCard = ({ title, tagLine1, tagLine2, img }: Props) => {
     <div className="w-[500px] bg-dark-background text-center rounded-xl pb-3">
       <SubHeader textStyle="text-secondary mt-1">{title}</SubHeader>
       <div className="ml-7 mr-7 mt-1 p-[7px] rounded-lg bg-secondary-gradient">
-        <img src={img} alt={title} className="bg-cover rounded-md" />
+        <img
+          src={img}
+          alt={title}
+          className="bg-cover rounded-md"
+          draggable="false"
+        />
       </div>
       <div className="flex m-7 mb-4 justify-center">
         {tagLine1.map((item, index) => (
