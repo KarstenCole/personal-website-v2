@@ -59,9 +59,9 @@ input{
   z-index: 10;
 }
 
-*:not(* > *){
+/* *:not(* > *){
   overflow: hidden;
-}
+} */
 
 .overflow-visible {
   overflow: visible !important; /* or any other value you want */

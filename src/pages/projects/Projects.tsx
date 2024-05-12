@@ -11,7 +11,7 @@ const Projects = ({ id }: Props) => {
     <div id={id} className="flex items-center flex-col mb-20">
       <UpArrow id="up-arrow" style="mt-[73px]"></UpArrow>
       <Title textStyle="mt-[73px]">Projects</Title>
-      <div className="flex flex-row mt-20 z-[1]">
+      <div id="project-cards" className="flex flex-row mt-20 z-[1]">
         <div className="flex flex-col mr-20">
           <ProjectCard
             title="Project 1"
