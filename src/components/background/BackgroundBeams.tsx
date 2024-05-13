@@ -107,7 +107,7 @@ const BackgroundBeams = ({ Page }: Props) => {
     },
     AboutMe: {},
     Main: {
-      Background: "",
+      Background: "bg-secondary-gradient",
       Angle: "",
       Offsets: [],
       AllHoleAreas: [[]],
@@ -155,6 +155,10 @@ const BackgroundBeams = ({ Page }: Props) => {
               x: beamMove,
               ease: "power1.inOut",
             });
+          if (beamid) {
+            beamid.classList.remove("bg-secondary-gradient");
+            beamid.classList.add("bg-primary-gradient");
+          }
         } else {
           beams.pause();
           if (beamid) {
