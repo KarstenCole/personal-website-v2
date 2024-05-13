@@ -1,4 +1,4 @@
-import UpArrow from "./UpArrow.tsx";
+// import UpArrow from "./UpArrow.tsx";
 import ProjectCard from "./ProjectCard.tsx";
 import Title from "./Title.tsx";
 
@@ -9,7 +9,8 @@ interface Props {
 const Projects = ({ id }: Props) => {
   return (
     <div id={id} className="flex items-center flex-col mb-20">
-      <UpArrow id="up-arrow" style="mt-[73px]"></UpArrow>
+      {/* <UpArrow id="up-arrow" style="mt-[73px]"></UpArrow> */}
+      <div className="h-[120px] bg-blue-600"></div>
       <Title textStyle="mt-[73px]">Projects</Title>
       <div id="project-cards" className="flex flex-row mt-20 z-[1]">
         <div className="flex flex-col mr-20">
@@ -17,6 +18,13 @@ const Projects = ({ id }: Props) => {
             title="Project 1"
             img="src/assets/ExProject.png"
             tagLine1={["React", "TailwindCSS", "GSAP", "TypeScript"]}
+          ></ProjectCard>
+          <div className="h-20"></div>
+          <ProjectCard
+            title="Project 3"
+            img="src/assets/ExProject.png"
+            tagLine1={["React", "TailwindCSS", "GSAP", "TypeScript"]}
+            tagLine2={["HTML", "CSS", "JavaScript", "GSAP"]}
           ></ProjectCard>
         </div>
         <div className="flex flex-col">

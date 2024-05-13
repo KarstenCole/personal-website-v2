@@ -10,29 +10,21 @@ import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 function App() {
   history.scrollRestoration = "manual";
   const [page, setPage] = useState("Home");
   const [highlight, setHighlight] = useState(true);
 
-  ScrollTrigger.normalizeScroll(true);
-
-  const smoother = ScrollSmoother.create({
-    smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
-    effects: true, // looks for data-speed and data-lag attributes on elements
-    smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
-  });
-
   useEffect(() => {
     //TODO finishin the scrubbing animation
     const scrollIntroAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: "#projects",
-        start: "-=80%",
-        end: "+=300",
-        markers: false,
+        start: "-=500",
+        end: "+=450",
+        markers: true,
         scrub: true,
         onLeaveBack: () => {
           setPage("Home");
@@ -85,18 +77,14 @@ function App() {
 
   return (
     <div id="page">
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <NameLogo id="name-logo" color={highlight}></NameLogo>
-          <Background page={page}>
-            <Home></Home>
-            <AboutMe></AboutMe>
-            <Projects id="projects"></Projects>
-            <WorkHistory></WorkHistory>
-            <Contact></Contact>
-          </Background>
-        </div>
-      </div>
+      <NameLogo id="name-logo" color={highlight}></NameLogo>
+      <Background page={page}>
+        <Home></Home>
+        <AboutMe></AboutMe>
+        <Projects id="projects"></Projects>
+        <WorkHistory></WorkHistory>
+        <Contact></Contact>
+      </Background>
     </div>
   );
 }
