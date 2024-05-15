@@ -29,7 +29,6 @@ function App() {
         onLeaveBack: () => {
           setPage("Home");
           setHighlight(true);
-          console.log("whatdahiellll");
         },
       },
     });
