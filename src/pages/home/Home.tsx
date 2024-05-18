@@ -3,7 +3,11 @@ import DownArrow from "../../pages/home/DownArrow.tsx";
 import AboutMeArrow from "../../pages/home/AboutMeArrow.tsx";
 import { useEffect } from "react";
 
-const Home = () => {
+interface Props {
+  handleClick: () => void;
+}
+
+const Home = ({ handleClick }: Props) => {
   useEffect(() => {}, []);
 
   return (
@@ -11,7 +15,7 @@ const Home = () => {
       <div id="home-page">
         <Title></Title>
         <DownArrow id="down-arrow"></DownArrow>
-        <AboutMeArrow></AboutMeArrow>
+        <AboutMeArrow handleClick={handleClick}></AboutMeArrow>
       </div>
     </>
   );

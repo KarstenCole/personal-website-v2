@@ -57,7 +57,7 @@ const BackgroundBeams = ({ Page }: Props) => {
           "h-[20px]",
           "mt-[40px]",
           "h-[90px]",
-          "mt-[140px]",
+          "mt-[110px]",
           "h-[20px]",
           "mt-[150px]",
           "h-[20px]",

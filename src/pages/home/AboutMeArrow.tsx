@@ -1,9 +1,17 @@
 import SubHeader from "../../components/ui/SubHeader.tsx";
 
-const AboutMeArrow = () => {
+interface Props {
+  textStyle?: string;
+  handleClick: () => void;
+}
+
+const AboutMeArrow = ({ textStyle, handleClick }: Props) => {
   return (
     <div className="absolute top-[91px] right-[91px]">
-      <div className="flex justify-center">
+      <div
+        onClick={handleClick}
+        className={"flex justify-center" + " " + textStyle}
+      >
         <SubHeader textStyle="text-primary mr-6">About me</SubHeader>
         <svg
           className="relative top-2"
