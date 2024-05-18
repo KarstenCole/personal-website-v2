@@ -16,7 +16,9 @@ function App() {
   const [page, setPage] = useState("Home");
   const [highlight, setHighlight] = useState(true);
   const aboutMeAnimation = gsap.timeline({
-    onStart: () => setAboutMePage(true),
+    onStart: () => {
+      !aboutMePage ? setAboutMePage(true) : null;
+    },
   });
   const [mainPage, setMainPage] = useState(true);
   const [aboutMePage, setAboutMePage] = useState<boolean>(false);
@@ -137,7 +139,13 @@ function App() {
           yPercent: 50,
           duration: 1,
           ease: "power1.out",
-          onComplete: () => setMainPage(false),
+          onComplete: () => {
+            if (mainPage) {
+              setMainPage(false);
+            } else {
+              setMainPage(true);
+            }
+          },
         },
         "<"
       )
@@ -183,51 +191,56 @@ function App() {
           yPercent: 100,
           duration: 1,
           ease: "power1.out",
+          onComplete: () => {
+            if (mainPage && aboutMePage) {
+              setAboutMePage(false);
+            }
+          },
         },
         "<"
       );
   };
 
-  const handleAboutMeBackClick = () => {
-    aboutMeAnimation.to("#main-page", {});
-  };
+  const handleAboutMeBackClick = () => {};
 
   return (
     <div id="page">
       <NameLogo id="name-logo" color={highlight}></NameLogo>
       <Background page={page}>
-        <div
-          id="transition-box-1"
-          className={
-            aboutMePage
-              ? "h-screen w-screen bg-background z-50 fixed top-0 left-0 opacity-95"
-              : ""
-          }
-        ></div>
-        <div
-          id="transition-box-2"
-          className={
-            aboutMePage
-              ? "h-screen w-screen bg-background z-50 fixed top-0 left-0 opacity-95"
-              : ""
-          }
-        ></div>
-        <div
-          id="transition-box-3"
-          className={
-            aboutMePage
-              ? "h-screen w-screen bg-background z-50 fixed top-0 left-0 opacity-95"
-              : ""
-          }
-        ></div>
-        <div
-          id="transition-box-4"
-          className={
-            aboutMePage
-              ? "h-screen w-screen bg-background z-50 fixed top-0 left-0 opacity-95"
-              : ""
-          }
-        ></div>
+        <div id="transition-wrapper">
+          <div
+            id="transition-box-1"
+            className={
+              aboutMePage
+                ? "h-screen w-screen bg-background z-50 fixed top-0 left-0 opacity-95"
+                : ""
+            }
+          ></div>
+          <div
+            id="transition-box-2"
+            className={
+              aboutMePage
+                ? "h-screen w-screen bg-background z-50 fixed top-0 left-0 opacity-95"
+                : ""
+            }
+          ></div>
+          <div
+            id="transition-box-3"
+            className={
+              aboutMePage
+                ? "h-screen w-screen bg-background z-50 fixed top-0 left-0 opacity-95"
+                : ""
+            }
+          ></div>
+          <div
+            id="transition-box-4"
+            className={
+              aboutMePage
+                ? "h-screen w-screen bg-background z-50 fixed top-0 left-0 opacity-95"
+                : ""
+            }
+          ></div>
+        </div>
         {mainPage && (
           <div id="main-page">
             <Home handleClick={handleAboutMeClick}></Home>
@@ -238,7 +251,7 @@ function App() {
         )}
         {aboutMePage && (
           <div id="about-me-page">
-            <AboutMe handleClick={handleAboutMeBackClick}></AboutMe>
+            <AboutMe handleClick={handleAboutMeClick}></AboutMe>
           </div>
         )}
       </Background>

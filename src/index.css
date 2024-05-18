@@ -60,10 +60,6 @@ input{
   z-index: 10;
 }
 
-/* *:not(* > *){
-  overflow: hidden;
-} */
-
 .overflow-visible {
   overflow: visible !important; /* or any other value you want */
 }

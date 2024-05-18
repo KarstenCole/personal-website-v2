@@ -8,14 +8,16 @@ interface Props {
 
 const AboutMe = ({ handleClick }: Props) => {
   return (
-    <div id="about-me" className="flex">
-      <div className="w-[10%] justify-center h-auto flex flex-col pl-10">
+    <div id="about-me" className="flex fixed h-screen">
+      <div className="w-[10%] justify-center h-full flex flex-col pl-10">
         <LeftArrow onClick={handleClick}></LeftArrow>
       </div>
       <div className="mt-48 ml-48">
         <Header textStyle="text-primary z-0 text-center mb-10">About Me</Header>
-        <SubHeader textStyle="text-secondary">
-          blashshla;dsjfl;aksjdf;lakjdf;lakj
+        <SubHeader textStyle="text-secondary text-2xl leading-10">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae odio
+          veritatis nisi libero ipsum, non enim repellat quasi est consequuntur
+          quis quisquam perspiciatis deserunt.
         </SubHeader>
       </div>
       <img
