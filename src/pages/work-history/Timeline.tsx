@@ -23,24 +23,24 @@ const Timeline = ({ style, cardProps }: Props) => {
         />
       </svg>
       <div className="relative flex flex-col items-center mt-2">
-        <div className="h-[1300px] w-[12px] bg-primary absolute top-0 left-[%]"></div>
+        <div className="h-[1100px] w-[12px] bg-primary absolute top-0 left-[%]"></div>
         {cardProps?.map((item, index) => (
           <div
             key={index}
             className={
               index % 2 === 0
-                ? "flex flex-row items-center ml-[250px] mt-20"
-                : "flex flex-row-reverse items-center mr-[250px] mt-20"
+                ? "flex flex-row items-center ml-[170px] mt-20"
+                : "flex flex-row-reverse items-center mr-[170px] mt-20"
             }
           >
-            <SubHeader textStyle="text-secondary m-10">
+            <SubHeader textStyle="text-secondary m-10 text-[35px]">
               <div className="text-center">
                 {item[3]}
                 <br />
                 {item[4]}
               </div>
             </SubHeader>
-            <div key={index} className="h-[7px] bg-primary w-52"></div>
+            <div key={index} className="h-[7px] bg-primary w-[120px]"></div>
             <TimelineCard
               title={item[0]}
               img={item[1]}

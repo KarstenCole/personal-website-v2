@@ -28,7 +28,7 @@ const TimelineCard = ({ title, img, subTitle, description }: Props) => {
           </div>
         ))}
       </div>
-      <svg
+      {/* <svg
         width="57"
         height="63"
         viewBox="0 0 57 63"
@@ -53,7 +53,7 @@ const TimelineCard = ({ title, img, subTitle, description }: Props) => {
           transform="rotate(180 28.9628 57.9628)"
           fill="#C0C0C0"
         />
-      </svg>
+      </svg> */}
     </div>
   );
 };

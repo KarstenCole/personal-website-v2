@@ -10,7 +10,7 @@ const Contact = () => {
       <div className="flex flex-col items-center">
         <div className="flex">
           <TextField>First:</TextField>
-          <div id="spacer" className="w-20"></div>
+          <div id="spacer" className="w-10"></div>
           <TextField>Last:</TextField>
         </div>
         <TextField>Email:</TextField>
@@ -18,8 +18,10 @@ const Contact = () => {
         <TextField body>Body:</TextField>
         <div className="w-full text-right z-[1]">
           <div className="rounded-lg mb-10">
-            <button className="bg-light-background p-3 pt-2 pb-2 rounded-lg">
-              <SubHeader textStyle="text-secondary text-4xl">Submit</SubHeader>
+            <button className="bg-light-background pr-2 pl-2 rounded-lg">
+              <SubHeader textStyle="text-secondary text-[30px]">
+                Submit
+              </SubHeader>
             </button>
           </div>
         </div>

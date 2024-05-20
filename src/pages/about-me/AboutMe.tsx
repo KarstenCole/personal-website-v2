@@ -14,7 +14,7 @@ const AboutMe = ({ handleClick }: Props) => {
       </div>
       <div className="mt-48 ml-48">
         <Header textStyle="text-primary z-0 text-center mb-10">About Me</Header>
-        <SubHeader textStyle="text-secondary text-2xl leading-10">
+        <SubHeader textStyle="text-secondary text-[30px] leading-10">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae odio
           veritatis nisi libero ipsum, non enim repellat quasi est consequuntur
           quis quisquam perspiciatis deserunt.

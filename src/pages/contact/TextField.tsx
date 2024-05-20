@@ -11,26 +11,30 @@ const TextField = ({ children, body }: Props) => {
     <div
       className={
         "flex bg-dark-background z-[1] p-4 rounded-lg w-full" +
-        (body ? " flex-col mb-5" : " flex-row mb-10")
+        (body ? " flex-col mb-5" : " flex-row mb-5")
       }
     >
       <SubHeader
-        textStyle={body ? "text-secondary mb-3" : "text-secondary mr-5"}
+        textStyle={
+          body
+            ? "text-secondary text-[30px] mb-3"
+            : "text-secondary text-[30px] mr-5"
+        }
       >
         {children}
       </SubHeader>
-      <div className="bg-secondary-gradient p-[7px] rounded-lg w-full">
+      <div className="bg-secondary-gradient p-[6px] rounded-lg w-full">
         {!body && (
           <input
             className={
-              "h-full rounded-md bg-dark-background text-primary font-manrope text-xl p-3 w-full"
+              "h-full rounded-md bg-dark-background text-primary font-manrope text-md p-2 w-full"
             }
           ></input>
         )}
         {body && (
           <textarea
             className={
-              "h-[150px] rounded-md bg-dark-background text-primary font-manrope text-xl p-3 w-full min-h-[60px]"
+              "h-[150px] rounded-md bg-dark-background text-primary font-manrope text-lg p-3 w-full min-h-[60px]"
             }
           ></textarea>
         )}
