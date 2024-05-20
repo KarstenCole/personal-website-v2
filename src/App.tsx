@@ -28,8 +28,8 @@ function App() {
   useEffect(() => {
     const scrollIntroAnimation = gsap.timeline({
       scrollTrigger: {
-        trigger: "#projects",
-        start: "-=580",
+        trigger: "#page",
+        start: "+=500",
         end: "+=450",
         markers: false,
         scrub: true,
@@ -83,7 +83,7 @@ function App() {
 
   const handleAboutMeClick = () => {
     const main = mainPage;
-    if (handlingClick.current == false) {
+    if (!handlingClick.current) {
       handlingClick.current = true;
       aboutMeAnimation
         .fromTo(
