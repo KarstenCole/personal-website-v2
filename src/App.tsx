@@ -5,7 +5,7 @@ import Projects from "./pages/projects/Projects.tsx";
 import WorkHistory from "./pages/work-history/WorkHistory.tsx";
 import NameLogo from "./components/ui/NameLogo.tsx";
 import Background from "./components/background/Background.tsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -22,6 +22,7 @@ function App() {
   });
   const [mainPage, setMainPage] = useState(true);
   const [aboutMePage, setAboutMePage] = useState<boolean>(false);
+  const handlingClick = useRef(false);
 
   // Intro Scroll Animation
   useEffect(() => {
@@ -45,7 +46,7 @@ function App() {
         {
           rotate: -25,
           x: "-=780",
-          ease: "power1.inOut",
+          ease: "power1",
         },
         "<"
       )
@@ -53,7 +54,7 @@ function App() {
         "#beam3",
         {
           x: "-=450",
-          ease: "power1.inOut",
+          ease: "power1",
           onStart: () => {
             setPage("Main");
             setHighlight(false);
@@ -66,7 +67,7 @@ function App() {
         {
           rotate: -25,
           x: "+=100",
-          ease: "power1.inOut",
+          ease: "circle",
         },
         "<"
       )
@@ -74,134 +75,133 @@ function App() {
         "#beam5",
         {
           x: "+=150",
-          ease: "power1.inOut",
+          ease: "circle",
         },
         "<"
       );
   }, []);
 
   const handleAboutMeClick = () => {
-    aboutMeAnimation
-      .fromTo(
-        "#transition-box-1",
-        {
-          xPercent: -100,
-          yPercent: 0,
-        },
-        {
-          delay: 0,
-          xPercent: -50,
-          yPercent: 0,
-          duration: 1,
-          ease: "power1.out",
-        },
-        "<"
-      )
-      .fromTo(
-        "#transition-box-2",
-        {
-          xPercent: 0,
-          yPercent: -100,
-        },
-        {
-          delay: 0.4,
-          xPercent: 0,
-          yPercent: -50,
-          duration: 1,
-          ease: "power1.out",
-        },
-        "<"
-      )
-      .fromTo(
-        "#transition-box-3",
-        {
-          xPercent: 100,
-          yPercent: 0,
-        },
-        {
-          delay: 0.4,
-          xPercent: 50,
-          yPercent: 0,
-          duration: 1,
-          ease: "power1.out",
-        },
-        "<"
-      )
-      .fromTo(
-        "#transition-box-4",
-        {
-          xPercent: 0,
-          yPercent: 100,
-        },
-        {
-          delay: 0.4,
-          xPercent: 0,
-          yPercent: 50,
-          duration: 1,
-          ease: "power1.out",
-          onComplete: () => {
-            if (mainPage) {
-              setMainPage(false);
-            } else {
-              setMainPage(true);
-            }
+    const main = mainPage;
+    if (handlingClick.current == false) {
+      handlingClick.current = true;
+      aboutMeAnimation
+        .fromTo(
+          "#transition-box-1",
+          {
+            xPercent: -100,
+            yPercent: 0,
           },
-        },
-        "<"
-      )
-      .to(window, { delay: 0 })
-      .to(
-        "#transition-box-1",
-        {
-          delay: 0,
-          xPercent: -100,
-          yPercent: 0,
-          duration: 1,
-          ease: "power1.out",
-        },
-        "<"
-      )
-      .to(
-        "#transition-box-2",
-        {
-          delay: 0.4,
-          xPercent: 0,
-          yPercent: -100,
-          duration: 1,
-          ease: "power1.out",
-        },
-        "<"
-      )
-      .to(
-        "#transition-box-3",
-        {
-          delay: 0.4,
-          xPercent: 100,
-          yPercent: 0,
-          duration: 1,
-          ease: "power1.out",
-        },
-        "<"
-      )
-      .to(
-        "#transition-box-4",
-        {
-          delay: 0.4,
-          xPercent: 0,
-          yPercent: 100,
-          duration: 1,
-          ease: "power1.out",
-          onComplete: () => {
-            if (mainPage && aboutMePage) {
-              setAboutMePage(false);
-            }
+          {
+            delay: 0.0,
+            xPercent: -50,
+            yPercent: 0,
+            duration: 0.5,
+            ease: "power1",
           },
-        },
-        "<"
-      );
+          "<"
+        )
+        .fromTo(
+          "#transition-box-2",
+          {
+            xPercent: 0,
+            yPercent: -100,
+          },
+          {
+            delay: 0.3,
+            xPercent: 0,
+            yPercent: -50,
+            duration: 0.5,
+            ease: "power1",
+          },
+          "<"
+        )
+        .fromTo(
+          "#transition-box-3",
+          {
+            xPercent: 100,
+            yPercent: 0,
+          },
+          {
+            delay: 0.3,
+            xPercent: 50,
+            yPercent: 0,
+            duration: 0.5,
+            ease: "power1",
+          },
+          "<"
+        )
+        .fromTo(
+          "#transition-box-4",
+          {
+            xPercent: 0,
+            yPercent: 100,
+          },
+          {
+            delay: 0.3,
+            xPercent: 0,
+            yPercent: 50,
+            duration: 0.5,
+            ease: "power1",
+            onComplete: () => {
+              setMainPage(!main);
+              if (!main) console.log("main is on");
+            },
+          },
+          "<"
+        )
+        .to(window, { delay: 0 })
+        .to(
+          "#transition-box-1",
+          {
+            delay: 0,
+            xPercent: -100,
+            yPercent: 0,
+            duration: 0.5,
+            ease: "power1",
+          },
+          "<"
+        )
+        .to(
+          "#transition-box-2",
+          {
+            delay: 0.3,
+            xPercent: 0,
+            yPercent: -100,
+            duration: 0.5,
+            ease: "power1",
+          },
+          "<"
+        )
+        .to(
+          "#transition-box-3",
+          {
+            delay: 0.3,
+            xPercent: 100,
+            yPercent: 0,
+            duration: 0.5,
+            ease: "power1",
+          },
+          "<"
+        )
+        .to(
+          "#transition-box-4",
+          {
+            delay: 0.3,
+            xPercent: 0,
+            yPercent: 100,
+            duration: 0.5,
+            ease: "power1",
+            onComplete: () => {
+              setAboutMePage(main);
+              if (main) console.log("Changed to aboutMe");
+              handlingClick.current = false;
+            },
+          },
+          "<"
+        );
+    }
   };
-
-  const handleAboutMeBackClick = () => {};
 
   return (
     <div id="page">

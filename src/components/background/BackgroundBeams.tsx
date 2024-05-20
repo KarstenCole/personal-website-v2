@@ -134,36 +134,34 @@ const BackgroundBeams = ({ Page }: Props) => {
         const beamName = "#beam" + (i + 1).toString();
         const beamid = document.querySelector(beamName);
         const delay = Math.random() + i * 0.5;
-        const rand = Math.random() * 10 + 7;
+        const rand = Math.random() * 20 + 14;
         const beamMove = "+=" + rand.toString();
-        const beamMoveBack = "-=" + (rand * 2).toString();
+        const beamMoveBack = "-=" + rand.toString();
         const beams = gsap.timeline({ repeat: -1, yoyo: true, delay: delay });
-        if (CurrPage == Backgrounds.Home) {
-          beams
-            .to(beamName, {
-              duration: 1.5,
-              x: beamMove,
-              ease: "power1.inOut",
-            })
-            .to(beamName, {
-              duration: 3,
-              x: beamMoveBack,
-              ease: "power1.inOut",
-            })
-            .to(beamName, {
-              duration: 1.5,
-              x: beamMove,
-              ease: "power1.inOut",
-            });
-          if (beamid) {
-            beamid.classList.remove("bg-secondary-gradient");
-            beamid.classList.add("bg-primary-gradient");
-          }
-        } else {
-          beams.pause();
-          if (beamid) {
-            beamid.classList.remove("bg-primary-gradient");
-            beamid.classList.add("bg-secondary-gradient");
+        {
+          if (CurrPage == Backgrounds.Home) {
+            beams
+              .to(beamName, {
+                duration: 3,
+                x: beamMove,
+                ease: "power1.inOut",
+              })
+              .to(beamName, {
+                duration: 3,
+                x: beamMoveBack,
+                ease: "power1.inOut",
+              });
+
+            if (beamid) {
+              beamid.classList.remove("bg-secondary-gradient");
+              beamid.classList.add("bg-primary-gradient");
+            }
+          } else {
+            beams.pause();
+            if (beamid) {
+              beamid.classList.add("bg-secondary-gradient");
+              beamid.classList.remove("bg-primary-gradient");
+            }
           }
         }
       }
