@@ -33,7 +33,7 @@ const Timeline = ({ style, cardProps }: Props) => {
                 : "flex flex-row-reverse items-center mr-[170px] mt-20"
             }
           >
-            <SubHeader textStyle="text-secondary m-10 text-[35px]">
+            <SubHeader textStyle="text-secondary m-10 !text-[35px]">
               <div className="text-center">
                 {item[3]}
                 <br />

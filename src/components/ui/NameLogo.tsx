@@ -12,7 +12,7 @@ const NameLogo = ({ id, className, color }: Props) => {
     <div
       id={id}
       onClick={handleClick}
-      className={className ? className : "fixed mt-[85px] ml-[85px] z-10"}
+      className={className ? className : "fixed mt-[85px] ml-[85px] z-[60]"}
     >
       {color ? (
         <svg

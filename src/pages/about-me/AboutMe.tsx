@@ -12,13 +12,17 @@ const AboutMe = ({ handleClick }: Props) => {
       <div className="w-[10%] justify-center h-full flex flex-col pl-10">
         <LeftArrow onClick={handleClick}></LeftArrow>
       </div>
-      <div className="mt-48 ml-48">
+      <div className="mt-48 ml-48 mb-48 items-center flex flex-col">
         <Header textStyle="text-primary z-0 text-center mb-10">About Me</Header>
-        <SubHeader textStyle="text-secondary text-[30px] leading-10">
+        <SubHeader textStyle="text-secondary !text-[30px] leading-10 text-center">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae odio
           veritatis nisi libero ipsum, non enim repellat quasi est consequuntur
           quis quisquam perspiciatis deserunt.
         </SubHeader>
+        <div className="flex z-[1] w-64 justify-between m-8 mt-0 mt-auto">
+          <img className="scale-[.65]" src="src/assets/linkedin.png" alt="" />
+          <img className="scale-[.65]" src="src/assets/github.png" />
+        </div>
       </div>
       <img
         src="src/assets/PrimaryGradient.png"
