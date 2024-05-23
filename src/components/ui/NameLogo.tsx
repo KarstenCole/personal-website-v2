@@ -2,16 +2,14 @@ interface Props {
   id?: string;
   className?: string;
   color?: boolean;
+  onClick?: () => void;
 }
 
-const NameLogo = ({ id, className, color }: Props) => {
-  const handleClick = () => {
-    console.log(color);
-  };
+const NameLogo = ({ id, className, color, onClick }: Props) => {
   return (
     <div
       id={id}
-      onClick={handleClick}
+      onClick={onClick}
       className={className ? className : "fixed mt-[85px] ml-[85px] z-[60]"}
     >
       {color ? (

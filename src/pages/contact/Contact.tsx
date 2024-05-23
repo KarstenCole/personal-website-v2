@@ -2,27 +2,48 @@ import Header from "../../components/ui/Header.tsx";
 import SubHeader from "../../components/ui/SubHeader.tsx";
 import TextField from "./TextField.tsx";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
-const Contact = () => {
-  const form = useRef();
+interface Props {
+  emailSent: () => void;
+  emailNotSent: (error: string) => void;
+}
+
+const Contact = ({ emailSent, emailNotSent }: Props) => {
+  const form = useRef(null);
+  const lastEmailSendTime: null | string =
+    localStorage.getItem("lastEmailSendTime");
+  const [lastEmailSent, setLastEmailSent] = useState(
+    lastEmailSendTime === null ? null : JSON.parse(lastEmailSendTime)
+  );
 
   const sendEmail = (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    if (form.current != undefined) {
+    if (
+      form.current != undefined &&
+      (lastEmailSent === null ||
+        lastEmailSent + 360 <= new Date().getTime() / 1000)
+    ) {
       emailjs
         .sendForm("service_fnoggi9", "template_5lscoys", form.current, {
           publicKey: "PVvHA-LJLf8X7D4yK",
         })
         .then(
           () => {
-            console.log("SUCCESS!");
+            emailSent();
+            localStorage.setItem(
+              "lastEmailSendTime",
+              JSON.stringify(new Date().getTime() / 1000)
+            );
+            setLastEmailSent(new Date().getTime() / 1000);
           },
           (error) => {
-            console.log("FAILED...", error.text);
+            emailNotSent(error.text);
           }
         );
+    } else if (lastEmailSent + 360 > new Date().getTime() / 1000) {
+      emailNotSent("You must wait 5 minutes after submitting a contact form.");
     }
   };
 
@@ -54,8 +75,17 @@ const Contact = () => {
           </div>
         </form>
         <div className="flex z-[1] w-64 justify-between m-8 mt-0">
-          <img className="scale-[.65]" src="src/assets/linkedin.png" alt="" />
-          <img className="scale-[.65]" src="src/assets/github.png" />
+          <img
+            draggable="false"
+            className="scale-[.65]"
+            src="src/assets/linkedin.png"
+            alt=""
+          />
+          <img
+            draggable="false"
+            className="scale-[.65]"
+            src="src/assets/github.png"
+          />
         </div>
       </div>
     </div>

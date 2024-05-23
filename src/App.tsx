@@ -5,6 +5,7 @@ import Projects from "./pages/projects/Projects.tsx";
 import WorkHistory from "./pages/work-history/WorkHistory.tsx";
 import NameLogo from "./components/ui/NameLogo.tsx";
 import Background from "./components/background/Background.tsx";
+import SubHeader from "./components/ui/SubHeader.tsx";
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -23,6 +24,7 @@ function App() {
   const [mainPage, setMainPage] = useState(true);
   const [aboutMePage, setAboutMePage] = useState<boolean>(false);
   const handlingClick = useRef(false);
+  const [errorMesssage, setErrorMessage] = useState<string | undefined>("");
 
   // Intro Scroll Animation
   useEffect(() => {
@@ -203,6 +205,45 @@ function App() {
     }
   };
 
+  // TODO make it so there can be an error and confirmation at the same time
+  // TODO make it so that u cant spam the submit button
+  const handleEmailSent = (errorMsg?: string) => {
+    const emailConfirmation = gsap.timeline({
+      onStart: () => {
+        if (typeof errorMsg === "string") {
+          setErrorMessage(errorMsg);
+        }
+      },
+    });
+    if (errorMsg == undefined || typeof errorMsg != "string") {
+      emailConfirmation
+        .to("#email-confirmation", {
+          right: 20,
+          ease: "power1.out",
+          duration: 0.7,
+        })
+        .to("#email-confirmation", {
+          delay: 2,
+          right: "-15rem",
+          ease: "power1.out",
+          duration: 0.7,
+        });
+    } else {
+      emailConfirmation
+        .to("#email-non-confirmation", {
+          right: 20,
+          ease: "power1.out",
+          duration: 0.7,
+        })
+        .to("#email-non-confirmation", {
+          delay: 4,
+          right: "-15rem",
+          ease: "power1.out",
+          duration: 0.7,
+        });
+    }
+  };
+
   return (
     <div id="page">
       <NameLogo id="name-logo" color={highlight}></NameLogo>
@@ -240,13 +281,35 @@ function App() {
                 : ""
             }
           ></div>
+          <div
+            id="email-confirmation"
+            className="p-4 z-9 fixed top-5 right-[-15rem] rounded-lg bg-dark-background"
+          >
+            <SubHeader textStyle="text-[#00FF66] text-[30px]">
+              Message Sent
+            </SubHeader>
+          </div>
+          <div
+            id="email-non-confirmation"
+            className="p-4 z-9 fixed top-5 right-[-15rem] rounded-lg bg-dark-background text-center"
+          >
+            <SubHeader textStyle="text-[#FF2E00] text-[30px]">
+              Error:
+              <SubHeader textStyle="text-secondary text-[20px] w-44">
+                {errorMesssage}
+              </SubHeader>
+            </SubHeader>
+          </div>
         </div>
         {mainPage && (
           <div id="main-page">
             <Home handleClick={handleAboutMeClick}></Home>
             <Projects id="projects"></Projects>
             <WorkHistory></WorkHistory>
-            <Contact></Contact>
+            <Contact
+              emailSent={handleEmailSent}
+              emailNotSent={handleEmailSent}
+            ></Contact>
           </div>
         )}
         {aboutMePage && (

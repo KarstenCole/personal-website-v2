@@ -20,11 +20,21 @@ const AboutMe = ({ handleClick }: Props) => {
           quis quisquam perspiciatis deserunt.
         </SubHeader>
         <div className="flex z-[1] w-64 justify-between m-8 mt-0 mt-auto">
-          <img className="scale-[.65]" src="src/assets/linkedin.png" alt="" />
-          <img className="scale-[.65]" src="src/assets/github.png" />
+          <img
+            draggable="false"
+            className="scale-[.65]"
+            src="src/assets/linkedin.png"
+            alt=""
+          />
+          <img
+            draggable="false"
+            className="scale-[.65]"
+            src="src/assets/github.png"
+          />
         </div>
       </div>
       <img
+        draggable="false"
         src="src/assets/PrimaryGradient.png"
         className="w-[45%] p-[10%] h-[90%] mt-auto mb-auto "
       />
