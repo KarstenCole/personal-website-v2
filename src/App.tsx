@@ -24,6 +24,7 @@ function App() {
   const [mainPage, setMainPage] = useState(true);
   const [aboutMePage, setAboutMePage] = useState<boolean>(false);
   const handlingClick = useRef(false);
+  const handlingContact = useRef(false);
   const [errorMesssage, setErrorMessage] = useState<string | undefined>("");
 
   // Intro Scroll Animation
@@ -47,7 +48,7 @@ function App() {
         "#beam2",
         {
           rotate: -25,
-          x: "-=780",
+          x: "-45vw",
           ease: "power1",
         },
         "<"
@@ -55,7 +56,7 @@ function App() {
       .to(
         "#beam3",
         {
-          x: "-=450",
+          x: "-30vw",
           ease: "power1",
           onStart: () => {
             setPage("Main");
@@ -68,7 +69,7 @@ function App() {
         "#beam4",
         {
           rotate: -25,
-          x: "+=100",
+          x: "+6vw",
           ease: "circle",
         },
         "<"
@@ -76,7 +77,7 @@ function App() {
       .to(
         "#beam5",
         {
-          x: "+=150",
+          x: "+9vw",
           ease: "circle",
         },
         "<"
@@ -205,8 +206,6 @@ function App() {
     }
   };
 
-  // TODO make it so there can be an error and confirmation at the same time
-  // TODO make it so that u cant spam the submit button
   const handleEmailSent = (errorMsg?: string) => {
     const emailConfirmation = gsap.timeline({
       onStart: () => {
@@ -215,32 +214,41 @@ function App() {
         }
       },
     });
-    if (errorMsg == undefined || typeof errorMsg != "string") {
-      emailConfirmation
-        .to("#email-confirmation", {
-          right: 20,
-          ease: "power1.out",
-          duration: 0.7,
-        })
-        .to("#email-confirmation", {
-          delay: 2,
-          right: "-15rem",
-          ease: "power1.out",
-          duration: 0.7,
-        });
-    } else {
-      emailConfirmation
-        .to("#email-non-confirmation", {
-          right: 20,
-          ease: "power1.out",
-          duration: 0.7,
-        })
-        .to("#email-non-confirmation", {
-          delay: 4,
-          right: "-15rem",
-          ease: "power1.out",
-          duration: 0.7,
-        });
+    if (!handlingContact.current) {
+      handlingContact.current = true;
+      if (errorMsg == undefined || typeof errorMsg != "string") {
+        emailConfirmation
+          .to("#email-confirmation", {
+            right: 20,
+            ease: "power1.out",
+            duration: 0.7,
+          })
+          .to("#email-confirmation", {
+            delay: 2,
+            right: "-15rem",
+            ease: "power1.out",
+            duration: 0.7,
+            onComplete: () => {
+              handlingContact.current = false;
+            },
+          });
+      } else {
+        emailConfirmation
+          .to("#email-non-confirmation", {
+            right: 20,
+            ease: "power1.out",
+            duration: 0.7,
+          })
+          .to("#email-non-confirmation", {
+            delay: 4,
+            right: "-15rem",
+            ease: "power1.out",
+            duration: 0.7,
+            onComplete: () => {
+              handlingContact.current = false;
+            },
+          });
+      }
     }
   };
 
@@ -285,7 +293,7 @@ function App() {
             id="email-confirmation"
             className="p-4 z-9 fixed top-5 right-[-15rem] rounded-lg bg-dark-background"
           >
-            <SubHeader textStyle="text-[#00FF66] text-[30px]">
+            <SubHeader textStyle="text-[#00FF66] !text-[30px]">
               Message Sent
             </SubHeader>
           </div>
@@ -293,7 +301,7 @@ function App() {
             id="email-non-confirmation"
             className="p-4 z-9 fixed top-5 right-[-15rem] rounded-lg bg-dark-background text-center"
           >
-            <SubHeader textStyle="text-[#FF2E00] text-[30px]">
+            <SubHeader textStyle="text-[#FF2E00] !text-[30px]">
               Error:
               <SubHeader textStyle="text-secondary text-[20px] w-44">
                 {errorMesssage}
