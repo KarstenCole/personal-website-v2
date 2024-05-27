@@ -10,7 +10,11 @@ const NameLogo = ({ id, className, color, onClick }: Props) => {
     <div
       id={id}
       onClick={onClick}
-      className={className ? className : "fixed mt-[85px] ml-[85px] z-[60]"}
+      className={
+        className
+          ? className
+          : "fixed mt-[85px] ml-[85px] z-[60] max-[965px]:absolute"
+      }
     >
       {color ? (
         <svg

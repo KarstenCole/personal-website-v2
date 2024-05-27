@@ -9,7 +9,7 @@ interface Props {
 
 const ProjectCard = ({ title, tagLine1, tagLine2, img }: Props) => {
   return (
-    <div className="w-[450px] bg-dark-background text-center rounded-xl pb-3">
+    <div className="w-[450px] max-[1414px]:w-[600px] max-[1030px]:w-[450px] bg-dark-background text-center rounded-xl pb-3">
       <SubHeader textStyle="text-secondary mt-1">{title}</SubHeader>
       <div className="ml-7 mr-7 mt-1 p-[7px] rounded-lg bg-secondary-gradient">
         <img

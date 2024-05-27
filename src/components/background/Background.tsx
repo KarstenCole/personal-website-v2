@@ -45,7 +45,7 @@ const Background = ({ children, page }: Props) => {
           id="bg1"
           src={BackgroundTexture}
           alt="Fuzz"
-          className="object-cover h-full w-full"
+          className="h-screen w-screen"
         />
       </div>
       <BackgroundBeams Page={page}></BackgroundBeams>

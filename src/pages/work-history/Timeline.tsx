@@ -15,32 +15,38 @@ const Timeline = ({ style, cardProps }: Props) => {
         viewBox="0 0 67 47"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute"
+        className="absolute max-[1340px]:hidden"
       >
         <path
           d="M67 27.8163L34.4437 0L0 28.2959V47L34.9155 18.7041L67 46.0408V27.8163Z"
           fill="#EEEEEE"
         />
       </svg>
-      <div className="relative flex flex-col items-center mt-2">
-        <div className="h-[1100px] w-[12px] bg-primary absolute top-0 left-[%]"></div>
+      <div className="relative flex flex-col items-center mt-2 max-[1340px]:-mt-[70px]">
+        <div className="h-[1100px] w-[12px] bg-primary absolute top-0 max-[1340px]:hidden"></div>
         {cardProps?.map((item, index) => (
           <div
             key={index}
             className={
               index % 2 === 0
-                ? "flex flex-row items-center ml-[170px] mt-20"
-                : "flex flex-row-reverse items-center mr-[170px] mt-20"
+                ? "flex flex-row items-center ml-[170px] max-[1340px]:ml-0 mt-20 max-[640px]:flex-col"
+                : "flex flex-row-reverse max-[1340px]:flex-row max-[1340px]:mr-0  items-center mr-[170px] mt-20 max-[640px]:flex-col"
             }
           >
-            <SubHeader textStyle="text-secondary m-10 !text-[35px]">
-              <div className="text-center">
+            <SubHeader textStyle="text-secondary m-10 !text-[35px] max-[640px]:!text-[45px] max-[640px]:mb-6">
+              <div className="text-center max-[640px]:flex">
                 {item[3]}
-                <br />
+                <div className="max-[640px]:w-5"></div>
                 {item[4]}
+                <div className="min-[640px]:hidden">
+                  <SubHeader textStyle="text-secondary">:</SubHeader>
+                </div>
               </div>
             </SubHeader>
-            <div key={index} className="h-[7px] bg-primary w-[120px]"></div>
+            <div
+              key={index}
+              className="h-[7px] bg-primary w-[120px] max-[1340px]:hidden"
+            ></div>
             <TimelineCard
               title={item[0]}
               img={item[1]}

@@ -253,7 +253,7 @@ function App() {
   };
 
   return (
-    <div id="page">
+    <div id="page" className="">
       <NameLogo id="name-logo" color={highlight}></NameLogo>
       <Background page={page}>
         <div id="transition-wrapper">

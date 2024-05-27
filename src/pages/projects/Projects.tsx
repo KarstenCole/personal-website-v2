@@ -12,8 +12,11 @@ const Projects = ({ id }: Props) => {
       {/* <UpArrow id="up-arrow" style="mt-[73px]"></UpArrow> */}
       <div className="h-[120px] bg-blue-600"></div>
       <Title textStyle="mt-[73px]">Projects</Title>
-      <div id="project-cards" className="flex flex-row mt-20 z-[1]">
-        <div className="flex flex-col mr-20">
+      <div
+        id="project-cards"
+        className="flex flex-row max-[1414px]:flex-col mt-20 z-[1]"
+      >
+        <div className="flex flex-col mr-20 max-[1414px]:mr-0">
           <ProjectCard
             title="Project 1"
             img="src/assets/ExProject.png"
@@ -27,7 +30,7 @@ const Projects = ({ id }: Props) => {
             tagLine2={["HTML", "CSS", "JavaScript", "GSAP"]}
           ></ProjectCard>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col max-[1414px]:mt-20">
           <ProjectCard
             title="Project 2"
             img="src/assets/ExProject.png"

@@ -48,11 +48,11 @@ const Contact = ({ emailSent, emailNotSent }: Props) => {
   };
 
   return (
-    <div className="mt-52 flex flex-col items-center">
+    <div className="mt-52 flex flex-col items-center m-20 mb-0">
       <Header textStyle="text-primary mb-20">Contact</Header>
       <div className="flex flex-col items-center">
         <form ref={form} onSubmit={sendEmail} className="z-0">
-          <div className="flex">
+          <div className="flex max-[640px]:flex-col">
             <TextField name="first_name">First:</TextField>
             <div id="spacer" className="w-10"></div>
             <TextField name="last_name">Last:</TextField>
