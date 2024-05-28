@@ -10,7 +10,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "deploy": "gh-pages -d build",
-    "test": "react-scripts test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
