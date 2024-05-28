@@ -48,7 +48,7 @@ function App() {
         "#beam2",
         {
           rotate: -25,
-          x: "-45vw",
+          x: "-50vw",
           ease: "power1",
         },
         "<"
@@ -303,7 +303,7 @@ function App() {
           >
             <SubHeader textStyle="text-[#FF2E00] !text-[30px]">
               Error:
-              <SubHeader textStyle="text-secondary text-[20px] w-44">
+              <SubHeader textStyle="text-secondary !text-[20px] w-44">
                 {errorMesssage}
               </SubHeader>
             </SubHeader>

@@ -39,9 +39,7 @@ const BackgroundBeams = ({ Page }: Props) => {
           "h-[30px]",
           "mt-[30px]",
           "h-[30px]",
-          "mt-[90px]",
-          "h-[30px]",
-          "mt-[250px]",
+          "mt-[370px]",
           "h-[60px]",
           "mt-[70px]",
           "h-[60px]",
@@ -174,7 +172,7 @@ const BackgroundBeams = ({ Page }: Props) => {
   return (
     <div
       id="beam-wrapper"
-      className={"fixed left-0 h-[125vh] w-full overflow-hidden flex"}
+      className={"fixed right-0 h-[125vh] w-full overflow-hidden flex"}
     >
       <BackgroundBeam
         id="beam1"
@@ -182,6 +180,7 @@ const BackgroundBeams = ({ Page }: Props) => {
         Offset={Backgrounds.Home.Offsets[0]}
         Mask="bg-primary-gradient"
         Angle={Backgrounds.Home.Angle}
+        Style="max-[1330px]:ml-[35%] max-[730px]:ml-[45%]"
       ></BackgroundBeam>
       <BackgroundBeam
         id="beam2"
@@ -189,6 +188,7 @@ const BackgroundBeams = ({ Page }: Props) => {
         Offset={Backgrounds.Home.Offsets[1]}
         Mask="bg-primary-gradient"
         Angle={Backgrounds.Home.Angle}
+        Style="max-[730px]:ml-[15%] max-[730px]:opacity-0 max-[1140px]:mr-[5%]"
       ></BackgroundBeam>
       <BackgroundBeam
         id="beam3"
@@ -196,6 +196,7 @@ const BackgroundBeams = ({ Page }: Props) => {
         Offset={Backgrounds.Home.Offsets[2]}
         Mask="bg-primary-gradient"
         Angle={Backgrounds.Home.Angle}
+        Style="max-[1450px]:opacity-0 max-[1330px]:ml-[15%]"
       ></BackgroundBeam>
       <BackgroundBeam
         id="beam4"
@@ -203,6 +204,7 @@ const BackgroundBeams = ({ Page }: Props) => {
         Offset={Backgrounds.Home.Offsets[3]}
         Mask="bg-primary-gradient"
         Angle={Backgrounds.Home.Angle}
+        Style="max-[730px]:opacity-0"
       ></BackgroundBeam>
       <BackgroundBeam
         id="beam5"
@@ -217,6 +219,7 @@ const BackgroundBeams = ({ Page }: Props) => {
         Offset={Backgrounds.Home.Offsets[5]}
         Mask="bg-primary-gradient"
         Angle={Backgrounds.Home.Angle}
+        Style="max-[1330px]:opacity-0"
       ></BackgroundBeam>
     </div>
   );

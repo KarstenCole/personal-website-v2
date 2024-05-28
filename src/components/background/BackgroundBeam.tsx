@@ -4,9 +4,17 @@ interface Props {
   Mask?: string;
   Angle?: string;
   id: string;
+  Style?: string;
 }
 
-const BackgroundBeam = ({ HoleAreas, Offset, Mask, Angle, id }: Props) => {
+const BackgroundBeam = ({
+  HoleAreas,
+  Offset,
+  Mask,
+  Angle,
+  id,
+  Style,
+}: Props) => {
   const initializeHoles = () => {
     const Holes: string[] = [];
     for (let i = 0; i < HoleAreas.length; i += 2) {
@@ -20,7 +28,14 @@ const BackgroundBeam = ({ HoleAreas, Offset, Mask, Angle, id }: Props) => {
     <div
       id={id}
       className={
-        "w-[7px] origin-top-right " + Mask + " " + Offset + " " + Angle
+        "w-[7px] origin-top-right " +
+        Mask +
+        " " +
+        Offset +
+        " " +
+        Angle +
+        " " +
+        Style
       }
     >
       <div id={"wrapper h-full w-full"}>

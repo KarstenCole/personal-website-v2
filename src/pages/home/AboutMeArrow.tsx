@@ -7,12 +7,14 @@ interface Props {
 
 const AboutMeArrow = ({ textStyle, handleClick }: Props) => {
   return (
-    <div className="absolute top-[91px] right-[91px]">
+    <div className="absolute top-[91px] right-[91px] max-[666px]:right-[40px] max-[540px]:right-[20px]">
       <div
         onClick={handleClick}
         className={"flex justify-center" + " " + textStyle}
       >
-        <SubHeader textStyle="text-primary mr-6">About me</SubHeader>
+        <div className="max-[475px]:opacity-0">
+          <SubHeader textStyle="text-primary mr-6">About me</SubHeader>
+        </div>
         <svg
           className="relative top-2"
           width="75"

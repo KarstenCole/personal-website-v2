@@ -26,16 +26,32 @@ const Projects = ({ id }: Props) => {
           <ProjectCard
             title="Project 3"
             img="src/assets/ExProject.png"
-            tagLine1={["React", "TailwindCSS", "GSAP", "TypeScript"]}
-            tagLine2={["HTML", "CSS", "JavaScript", "GSAP"]}
+            tagLine1={[
+              "React",
+              "TailwindCSS",
+              "GSAP",
+              "TypeScript",
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "GSAP",
+            ]}
           ></ProjectCard>
         </div>
         <div className="flex flex-col max-[1414px]:mt-20">
           <ProjectCard
             title="Project 2"
             img="src/assets/ExProject.png"
-            tagLine1={["React", "TailwindCSS", "GSAP", "TypeScript"]}
-            tagLine2={["HTML", "CSS", "JavaScript", "GSAP"]}
+            tagLine1={[
+              "React",
+              "TailwindCSS",
+              "GSAP",
+              "TypeScript",
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "GSAP",
+            ]}
           ></ProjectCard>
         </div>
       </div>

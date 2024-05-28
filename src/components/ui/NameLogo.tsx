@@ -13,7 +13,7 @@ const NameLogo = ({ id, className, color, onClick }: Props) => {
       className={
         className
           ? className
-          : "fixed mt-[85px] ml-[85px] z-[60] max-[965px]:absolute"
+          : "fixed mt-[85px] ml-[85px] z-[60] max-[965px]:absolute max-[666px]:ml-[40px] max-[515px]:ml-[20px]"
       }
     >
       {color ? (
