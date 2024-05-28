@@ -1,7 +1,7 @@
 {
   "name": "personalwebsite",
   "private": true,
-  "homepage": "https://karstencole.github.io/personal-website-v2/",
+  "homepage": "https://karstencole.github.io/personal-website-v2/src/index.html",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
