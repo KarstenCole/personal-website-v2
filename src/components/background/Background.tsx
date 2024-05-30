@@ -10,11 +10,11 @@ interface Props {
 
 const Background = ({ children, page }: Props) => {
   const [BackgroundTextures] = useState([
-    "public/assets/Noise/Noise&Texture4.png",
-    "public/assets/Noise/Noise&Texture2.png",
-    "public/assets/Noise/Noise&Texture5.png",
-    "public/assets/Noise/Noise&Texture3.png",
-    "public/assets/Noise/Noise&Texture.png",
+    "assets/Noise/Noise&Texture4.png",
+    "assets/Noise/Noise&Texture2.png",
+    "assets/Noise/Noise&Texture5.png",
+    "assets/Noise/Noise&Texture3.png",
+    "assets/Noise/Noise&Texture.png",
   ]);
   const [BackgroundTexture, setBackgroundTexture] = useState(
     BackgroundTextures[0]

@@ -18,13 +18,13 @@ const Projects = ({ id }: Props) => {
         <div className="flex flex-col mr-20 max-[1414px]:mr-0">
           <ProjectCard
             title="Project 1"
-            img="public/assets/ExProject.png"
+            img="assets/ExProject.png"
             tagLine1={["React", "TailwindCSS", "GSAP", "TypeScript"]}
           ></ProjectCard>
           <div className="h-20"></div>
           <ProjectCard
             title="Project 3"
-            img="public/assets/ExProject.png"
+            img="assets/ExProject.png"
             tagLine1={[
               "React",
               "TailwindCSS",
@@ -40,7 +40,7 @@ const Projects = ({ id }: Props) => {
         <div className="flex flex-col max-[1414px]:mt-20">
           <ProjectCard
             title="Project 2"
-            img="public/assets/ExProject.png"
+            img="assets/ExProject.png"
             tagLine1={[
               "React",
               "TailwindCSS",

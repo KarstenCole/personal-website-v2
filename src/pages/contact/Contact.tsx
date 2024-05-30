@@ -78,13 +78,13 @@ const Contact = ({ emailSent, emailNotSent }: Props) => {
           <img
             draggable="false"
             className="scale-[.65]"
-            src="public/assets/linkedin.png"
+            src="assets/linkedin.png"
             alt=""
           />
           <img
             draggable="false"
             className="scale-[.65]"
-            src="public/assets/github.png"
+            src="assets/github.png"
           />
         </div>
       </div>
