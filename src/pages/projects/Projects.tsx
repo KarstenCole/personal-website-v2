@@ -9,7 +9,6 @@ interface Props {
 const Projects = ({ id }: Props) => {
   return (
     <div id={id} className="flex items-center flex-col mb-20">
-      {/* <UpArrow id="up-arrow" style="mt-[73px]"></UpArrow> */}
       <div className="h-[120px] bg-blue-600"></div>
       <Title textStyle="mt-[73px]">Projects</Title>
       <div
@@ -19,13 +18,13 @@ const Projects = ({ id }: Props) => {
         <div className="flex flex-col mr-20 max-[1414px]:mr-0">
           <ProjectCard
             title="Project 1"
-            img="src/assets/ExProject.png"
+            img="public/assets/ExProject.png"
             tagLine1={["React", "TailwindCSS", "GSAP", "TypeScript"]}
           ></ProjectCard>
           <div className="h-20"></div>
           <ProjectCard
             title="Project 3"
-            img="src/assets/ExProject.png"
+            img="public/assets/ExProject.png"
             tagLine1={[
               "React",
               "TailwindCSS",
@@ -41,7 +40,7 @@ const Projects = ({ id }: Props) => {
         <div className="flex flex-col max-[1414px]:mt-20">
           <ProjectCard
             title="Project 2"
-            img="src/assets/ExProject.png"
+            img="public/assets/ExProject.png"
             tagLine1={[
               "React",
               "TailwindCSS",

@@ -9,7 +9,7 @@ const WorkHistory = () => {
         cardProps={[
           [
             "Comik Ink",
-            "src/assets/ComikInk.png",
+            "public/assets/ComikInk.png",
             "GRAPHIC DESIGNER",
             "Summer",
             "2023",
@@ -19,7 +19,7 @@ const WorkHistory = () => {
           ],
           [
             "Comik Ink",
-            "src/assets/ComikInk.png",
+            "public/assets/ComikInk.png",
             "GRAPHIC DESIGNER",
             "Summer",
             "2023",
@@ -29,7 +29,7 @@ const WorkHistory = () => {
           ],
           [
             "Comik Ink",
-            "src/assets/ComikInk.png",
+            "public/assets/ComikInk.png",
             "GRAPHIC DESIGNER",
             "Summer",
             "2023",
