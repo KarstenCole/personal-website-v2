@@ -34,14 +34,14 @@ html{
 }
 
 .bg-primary-gradient{
-  background-image: url("/assets/PrimaryGradient.png");
+  background-image: url("assets/PrimaryGradient.png");
   background-attachment: fixed;
   background-position: top left;
   background-size:cover;
 }
 
 .bg-secondary-gradient{
-  background-image: url("/assets/SecondaryGradient.png");
+  background-image: url("assets/SecondaryGradient.png");
   background-attachment: fixed;
   background-position: top left;
   background-size:cover;
