@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .font-outfit {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
@@ -34,7 +35,7 @@ html{
 }
 
 .bg-primary-gradient{
-  background-image: url("./assets/PrimaryGradient.png");
+  background-image: url("/PrimaryGradient.png");
   background-attachment: fixed;
   background-position: top left;
   background-size:cover;
