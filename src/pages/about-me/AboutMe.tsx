@@ -23,19 +23,19 @@ const AboutMe = ({ handleClick }: Props) => {
           <img
             draggable="false"
             className="scale-[.65]"
-            src="public/assets/linkedin.png"
+            src="/assets/linkedin.png"
             alt=""
           />
           <img
             draggable="false"
             className="scale-[.65]"
-            src="public/assets/github.png"
+            src="/assets/github.png"
           />
         </div>
       </div>
       <img
         draggable="false"
-        src="public/assets/PrimaryGradient.png"
+        src="/assets/PrimaryGradient.png"
         className="w-[45%] p-[10%] h-[90%] mt-auto mb-auto "
       />
     </div>
