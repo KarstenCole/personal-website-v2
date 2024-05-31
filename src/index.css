@@ -42,7 +42,7 @@ html{
 }
 
 .bg-secondary-gradient{
-  background-image: url("./assets/SecondaryGradient.png");
+  background-image: url("/SecondaryGradient.png");
   background-attachment: fixed;
   background-position: top left;
   background-size:cover;
