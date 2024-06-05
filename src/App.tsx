@@ -299,7 +299,7 @@ function App() {
           </div>
           <div
             id="email-non-confirmation"
-            className="p-4 z-9 fixed top-5 right-[-15rem] rounded-lg bg-dark-background text-center"
+            className="p-4 z-10 fixed top-5 right-[-15rem] rounded-lg bg-dark-background text-center"
           >
             <SubHeader textStyle="text-[#FF2E00] !text-[30px]">
               Error:

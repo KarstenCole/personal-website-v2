@@ -16,11 +16,8 @@ const Title = () => {
         <div className="m-[8px] max-[1140px]:m-0"></div>
         <Header textStyle="text-primary z-0">Karsten Cole</Header> <br />
       </div>
-      <div
-        id="subheader"
-        className="flex max-[1140px]:w-[440px] max-[1140px]:text-center"
-      >
-        <SubHeader textStyle="text-secondary z-0 ">
+      <div id="subheader" className="flex max-[1140px]:text-center">
+        <SubHeader textStyle="text-secondary z-0">
           Fullstack Developer & Designer
         </SubHeader>
       </div>

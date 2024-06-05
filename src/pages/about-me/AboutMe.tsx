@@ -12,14 +12,14 @@ const AboutMe = ({ handleClick }: Props) => {
       <div className="h-full flex flex-col pl-10 max-[600px]:mb-38 max-[600px]:mt-[85px] justify-center max-[600px]:flex-row max-[600px]:justify-end max-[600px]:pr-10">
         <LeftArrow onClick={handleClick}></LeftArrow>
       </div>
-      <div className="mt-48 ml-48 mb-48 items-center flex flex-col max-[1290px]:ml-16 max-[840px]:mr-16 max-[600px]:mt-0 ">
+      <div className="mt-48 ml-48 mb-48 items-center flex flex-col max-[1290px]:ml-16 max-[840px]:mr-16 max-[600px]:mt-10 max-[600px]:ml-4 max-[600px]:mr-4">
         <Header textStyle="text-primary z-0 text-center mb-10">About Me</Header>
-        <SubHeader textStyle="text-secondary !text-[30px] leading-10 text-center">
+        <SubHeader textStyle="text-secondary !text-[30px] leading-10 text-center max-[475px]:!text-[25px]">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae odio
           veritatis nisi libero ipsum, non enim repellat quasi est consequuntur
           quis quisquam perspiciatis deserunt.
         </SubHeader>
-        <div className="flex z-[1] w-64 justify-between m-8 mt-0 mt-auto">
+        <div className="flex z-[1] w-64 justify-between m-8 mt-6">
           <img
             draggable="false"
             className="scale-[.65]"

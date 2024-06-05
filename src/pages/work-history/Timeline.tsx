@@ -33,11 +33,11 @@ const Timeline = ({ style, cardProps }: Props) => {
                 : "flex flex-row-reverse max-[1340px]:flex-row max-[1340px]:mr-0  items-center mr-[170px] mt-20 max-[640px]:flex-col"
             }
           >
-            <SubHeader textStyle="text-secondary m-10 !text-[35px] max-[640px]:!text-[45px] max-[640px]:mb-6">
+            <SubHeader textStyle="text-secondary m-10 !text-[35px] max-[640px]:text-[45px] max-[640px]:mb-6">
               <div className="text-center max-[640px]:flex">
-                {item[3]}
+                <SubHeader textStyle="text-secondary">{item[3]}</SubHeader>
                 <div className="max-[640px]:w-5"></div>
-                {item[4]}
+                <SubHeader textStyle="text-secondary">{item[4]}</SubHeader>
                 <div className="min-[640px]:hidden">
                   <SubHeader textStyle="text-secondary">:</SubHeader>
                 </div>

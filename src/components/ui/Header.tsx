@@ -7,7 +7,11 @@ interface Props {
 
 const Header = ({ children, textStyle }: Props) => {
   return (
-    <div className={"font-outfit text-[75px] z-[1] " + textStyle}>
+    <div
+      className={
+        "font-outfit text-[75px] z-[1] max-[475px]:text-[50px] " + textStyle
+      }
+    >
       {children}
     </div>
   );
