@@ -15,22 +15,28 @@ const AboutMe = ({ handleClick }: Props) => {
       <div className="mt-48 ml-48 mb-48 items-center flex flex-col max-[1290px]:ml-16 max-[840px]:mr-16 max-[600px]:mt-10 max-[600px]:ml-4 max-[600px]:mr-4">
         <Header textStyle="text-primary z-0 text-center mb-10">About Me</Header>
         <SubHeader textStyle="text-secondary !text-[30px] leading-10 text-center max-[475px]:!text-[25px]">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae odio
-          veritatis nisi libero ipsum, non enim repellat quasi est consequuntur
-          quis quisquam perspiciatis deserunt.
+          I'm a Virginia Tech student with a major in Computer Science and a
+          minor in Finance.
+          <br />
+          <br />I enjoy developing and designing innovative applications that
+          make software more accesible to the people who actually want it.
         </SubHeader>
         <div className="flex z-[1] w-64 justify-between m-8 mt-6">
-          <img
-            draggable="false"
-            className="scale-[.65]"
-            src="assets/linkedin.png"
-            alt=""
-          />
-          <img
-            draggable="false"
-            className="scale-[.65]"
-            src="assets/github.png"
-          />
+          <a href="https://www.linkedin.com/in/karsten-cole/" target="_blank">
+            <img
+              draggable="false"
+              className="scale-[.65]"
+              src="assets/linkedin.png"
+              alt=""
+            />
+          </a>
+          <a href="https://github.com/KarstenCole" target="_blank">
+            <img
+              draggable="false"
+              className="scale-[.65]"
+              src="assets/github.png"
+            />
+          </a>
         </div>
       </div>
       <img

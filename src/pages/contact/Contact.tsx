@@ -75,17 +75,21 @@ const Contact = ({ emailSent, emailNotSent }: Props) => {
           </div>
         </form>
         <div className="flex z-[1] w-64 justify-between m-8 mt-0">
-          <img
-            draggable="false"
-            className="scale-[.65]"
-            src="assets/linkedin.png"
-            alt=""
-          />
-          <img
-            draggable="false"
-            className="scale-[.65]"
-            src="assets/github.png"
-          />
+          <a href="https://www.linkedin.com/in/karsten-cole/" target="_blank">
+            <img
+              draggable="false"
+              className="scale-[.65]"
+              src="assets/linkedin.png"
+              alt=""
+            />
+          </a>
+          <a href="https://github.com/KarstenCole" target="_blank">
+            <img
+              draggable="false"
+              className="scale-[.65]"
+              src="assets/github.png"
+            />
+          </a>
         </div>
       </div>
     </div>

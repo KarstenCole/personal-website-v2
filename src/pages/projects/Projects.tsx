@@ -17,40 +17,18 @@ const Projects = ({ id }: Props) => {
       >
         <div className="flex flex-col mr-20 max-[1414px]:mr-0">
           <ProjectCard
-            title="Project 1"
-            img="assets/ExProject.png"
-            tagLine1={["React", "TailwindCSS", "GSAP", "TypeScript"]}
-          ></ProjectCard>
-          <div className="h-20"></div>
-          <ProjectCard
-            title="Project 3"
-            img="assets/ExProject.png"
-            tagLine1={[
-              "React",
-              "TailwindCSS",
-              "GSAP",
-              "TypeScript",
-              "HTML",
-              "CSS",
-              "JavaScript",
-              "GSAP",
-            ]}
+            title="Galaxy Shooter"
+            img="assets/GalaxyShooter.png"
+            tagLine1={["Java"]}
+            link="https://github.com/KarstenCole/APCS__FinalProject"
           ></ProjectCard>
         </div>
         <div className="flex flex-col max-[1414px]:mt-20">
           <ProjectCard
-            title="Project 2"
-            img="assets/ExProject.png"
-            tagLine1={[
-              "React",
-              "TailwindCSS",
-              "GSAP",
-              "TypeScript",
-              "HTML",
-              "CSS",
-              "JavaScript",
-              "GSAP",
-            ]}
+            title="Guitar & Music Lessons"
+            img="assets/Music&GuitarLessons.jpg"
+            tagLine1={["HTML", "CSS"]}
+            link="https://github.com/KarstenCole/CSS-HTML-Project"
           ></ProjectCard>
         </div>
       </div>
