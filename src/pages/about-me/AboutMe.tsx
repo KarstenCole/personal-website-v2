@@ -8,13 +8,13 @@ interface Props {
 
 const AboutMe = ({ handleClick }: Props) => {
   return (
-    <div id="about-me" className="flex fixed h-screen max-[600px]:flex-col">
+    <div id="about-me" className="flex fixed max-[600px]:flex-col">
       <div className="h-full flex flex-col pl-10 max-[600px]:mb-38 max-[600px]:mt-[85px] justify-center max-[600px]:flex-row max-[600px]:justify-end max-[600px]:pr-10">
         <LeftArrow onClick={handleClick}></LeftArrow>
       </div>
       <div className="mt-48 ml-48 mb-48 items-center flex flex-col max-[1290px]:ml-16 max-[840px]:mr-16 max-[600px]:mt-10 max-[600px]:ml-4 max-[600px]:mr-4">
         <Header textStyle="text-primary z-0 text-center mb-10">About Me</Header>
-        <SubHeader textStyle="text-secondary !text-[30px] leading-10 text-center max-[475px]:!text-[25px]">
+        <SubHeader textStyle="text-secondary !text-[30px] leading-10 text-center max-[475px]:text-[25px]">
           I'm a Virginia Tech student with a major in Computer Science and a
           minor in Finance.
           <br />
