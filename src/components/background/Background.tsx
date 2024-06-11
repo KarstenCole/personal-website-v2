@@ -21,9 +21,17 @@ const Background = ({ children, page }: Props) => {
   );
   const [bgShuffleID, setBgShuffleID] = useState(0);
 
+  const preloadImages = (srcArray: string[]) => {
+    srcArray.forEach((src: string) => {
+      const img = new Image();
+      img.src = src;
+    });
+  };
+
   //Fuzz effect
   useEffect(() => {
     if (!bgShuffleID) {
+      preloadImages(BackgroundTextures);
       let BackgroundCounter: number = 0;
       setBgShuffleID(
         setInterval(() => {
@@ -44,7 +52,7 @@ const Background = ({ children, page }: Props) => {
       >
         <img
           id="bg1"
-          src="assets/Noise/Noise&Texture.png"
+          src={BackgroundTexture}
           alt="Fuzz"
           className="h-screen w-screen"
         />
