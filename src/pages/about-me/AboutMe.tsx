@@ -9,7 +9,7 @@ interface Props {
 const AboutMe = ({ handleClick }: Props) => {
   return (
     <div id="about-me" className="flex fixed max-[600px]:flex-col">
-      <div className="h-full flex flex-col pl-10 max-[600px]:mb-38 max-[600px]:mt-[85px] justify-center max-[600px]:flex-row max-[600px]:justify-end max-[600px]:pr-10">
+      <div className="h-screen flex flex-col pl-10 max-[600px]:mb-38 max-[600px]:mt-[85px] justify-center max-[600px]:flex-row max-[600px]:justify-end max-[600px]:pr-10">
         <LeftArrow onClick={handleClick}></LeftArrow>
       </div>
       <div className="mt-48 ml-48 mb-48 items-center flex flex-col max-[1290px]:ml-16 max-[840px]:mr-16 max-[600px]:mt-10 max-[600px]:ml-4 max-[600px]:mr-4">
