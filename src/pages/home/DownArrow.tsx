@@ -8,7 +8,7 @@ const DownArrow = ({ id }: Props) => {
   };
 
   return (
-    <div className="absolute bottom-[-10px] w-full flex justify-center">
+    <div className="absolute bottom-[-10px] w-full flex justify-center max-[700px]:opacity-0">
       <div onClick={handleClick}>
         <svg
           id={id}

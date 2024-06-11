@@ -35,6 +35,7 @@ const Background = ({ children, page }: Props) => {
     }
   }, [bgShuffleID, BackgroundTexture, BackgroundTextures]);
 
+  //TODO make the background texture cycle
   return (
     <div id="page-wrapper" className="select-none -z-50">
       <div
@@ -43,7 +44,7 @@ const Background = ({ children, page }: Props) => {
       >
         <img
           id="bg1"
-          src={BackgroundTexture}
+          src="assets/Noise/Noise&Texture.png"
           alt="Fuzz"
           className="h-screen w-screen"
         />
