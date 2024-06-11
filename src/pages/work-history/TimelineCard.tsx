@@ -19,9 +19,9 @@ const TimelineCard = ({ title, img, subTitle, description }: Props) => {
             {subTitle}
           </div>
         </div>
-        <div className="flex p-[7px] bg-secondary-gradient rounded-lg ">
+        <div className="flex p-[7px] bg-secondary-gradient rounded-lg max-[475px]:w-20 max-[475px]:h-20 min-[476px]:w-28 min-[476px]:h-28">
           <img
-            className="rounded-md max-[475px]:h-20 min-[476px]:h-28"
+            className="rounded-md "
             src={img}
             alt={title}
             draggable="false"
