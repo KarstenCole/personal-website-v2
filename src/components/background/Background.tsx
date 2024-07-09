@@ -6,9 +6,10 @@ import BackgroundBeams from "./BackgroundBeams";
 interface Props {
   children: ReactNode;
   page: string;
+  aboutMePage: boolean;
 }
 
-const Background = ({ children, page }: Props) => {
+const Background = ({ children, page, aboutMePage }: Props) => {
   const [BackgroundTextures] = useState([
     "assets/Noise/Noise&Texture4.png",
     "assets/Noise/Noise&Texture2.png",
@@ -43,7 +44,6 @@ const Background = ({ children, page }: Props) => {
     }
   }, [bgShuffleID, BackgroundTexture, BackgroundTextures]);
 
-  //TODO make the background texture cycle
   return (
     <div id="page-wrapper" className="select-none -z-50">
       <div
@@ -57,7 +57,7 @@ const Background = ({ children, page }: Props) => {
           className="h-screen w-screen"
         />
       </div>
-      <BackgroundBeams Page={page}></BackgroundBeams>
+      <BackgroundBeams aboutMePage={aboutMePage} Page={page}></BackgroundBeams>
       <div id="body" className="z-10">
         {children}
       </div>

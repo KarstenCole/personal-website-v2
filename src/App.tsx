@@ -29,6 +29,7 @@ function App() {
 
   // Intro Scroll Animation
   useEffect(() => {
+    console.log("About me", aboutMePage);
     const scrollIntroAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: "#page",
@@ -42,7 +43,6 @@ function App() {
         },
       },
     });
-
     scrollIntroAnimation
       .to(
         "#beam2",
@@ -82,7 +82,7 @@ function App() {
         },
         "<"
       );
-  }, []);
+  }, [aboutMePage]);
 
   const handleAboutMeClick = () => {
     const main = mainPage;
@@ -148,7 +148,6 @@ function App() {
             ease: "power1",
             onComplete: () => {
               setMainPage(!main);
-              if (!main) console.log("main is on");
             },
           },
           "<"
@@ -197,7 +196,6 @@ function App() {
             ease: "power1",
             onComplete: () => {
               setAboutMePage(main);
-              if (main) console.log("Changed to aboutMe");
               handlingClick.current = false;
             },
           },
@@ -255,7 +253,7 @@ function App() {
   return (
     <div id="page" className="">
       <NameLogo id="name-logo" color={highlight}></NameLogo>
-      <Background page={page}>
+      <Background aboutMePage={aboutMePage} page={page}>
         <div id="transition-wrapper">
           <div
             id="transition-box-1"

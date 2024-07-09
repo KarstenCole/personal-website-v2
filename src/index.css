@@ -64,3 +64,7 @@ input{
 .overflow-visible {
   overflow: visible !important; /* or any other value you want */
 }
+
+#about-me-page{
+  position: relative;
+}

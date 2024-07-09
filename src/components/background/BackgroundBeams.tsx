@@ -5,9 +5,10 @@ import { useEffect } from "react";
 
 interface Props {
   Page: string;
+  aboutMePage: boolean;
 }
 
-const BackgroundBeams = ({ Page }: Props) => {
+const BackgroundBeams = ({ Page, aboutMePage }: Props) => {
   const [Backgrounds] = useState({
     Home: {
       Background: "bg-primary-gradient",
@@ -150,13 +151,13 @@ const BackgroundBeams = ({ Page }: Props) => {
                 ease: "power1.inOut",
               });
 
-            if (beamid) {
+            if (beamid && !aboutMePage) {
               beamid.classList.remove("bg-secondary-gradient");
               beamid.classList.add("bg-primary-gradient");
             }
           } else {
             beams.pause();
-            if (beamid) {
+            if (beamid && !aboutMePage) {
               beamid.classList.add("bg-secondary-gradient");
               beamid.classList.remove("bg-primary-gradient");
             }
