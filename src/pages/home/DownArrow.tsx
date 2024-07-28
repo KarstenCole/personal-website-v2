@@ -17,7 +17,7 @@ const DownArrow = ({ id }: Props) => {
           viewBox="0 0 91 99"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="max-[700px]:w-[75%] max-[700px]:m-auto"
+          className="max-[700px]:w-[75%] max-[700px]:m-auto down-arrow-visibility"
         >
           <path
             id={id + "-head"}

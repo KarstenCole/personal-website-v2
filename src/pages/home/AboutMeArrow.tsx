@@ -12,7 +12,7 @@ const AboutMeArrow = ({ textStyle, handleClick }: Props) => {
         onClick={handleClick}
         className={"flex justify-center" + " " + textStyle}
       >
-        <div className="max-[475px]:opacity-0">
+        <div className="max-[475px]:opacity-0 about-me-textsize">
           <SubHeader textStyle="text-primary mr-6">About me</SubHeader>
         </div>
         <svg

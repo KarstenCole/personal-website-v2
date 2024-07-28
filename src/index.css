@@ -68,3 +68,21 @@ input{
 #about-me-page{
   position: relative;
 }
+
+@media (max-height: 720px) {
+  .subheader-textsize {
+    font-size: 25px;
+  }
+  .header-textsize {
+    font-size: 50px;
+  }
+  .about-me-textsize {
+    opacity: 0;
+  }
+}
+
+@media (max-height: 600px) {
+  .down-arrow-visibility {
+    opacity: 0;
+  }
+}

@@ -9,7 +9,7 @@ const Title = () => {
       >
         <div
           id="header"
-          className="flex max-[1140px]:flex-col max-[1140px]:text-center"
+          className="flex max-[1140px]:flex-col max-[1140px]:text-center mx-5"
         >
           <Header textStyle="text-transparent text-stroke-primary z-0">
             Hey I'm
@@ -17,7 +17,7 @@ const Title = () => {
           <div className="m-[8px] max-[1140px]:m-0"></div>
           <Header textStyle="text-primary z-0">Karsten Cole</Header> <br />
         </div>
-        <div id="subheader" className="flex max-[1140px]:text-center">
+        <div id="subheader" className="flex max-[1140px]:text-center mx-5">
           <SubHeader textStyle="text-secondary z-0">
             Fullstack Developer & Designer
           </SubHeader>
