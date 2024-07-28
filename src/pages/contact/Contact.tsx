@@ -74,7 +74,7 @@ const Contact = ({ emailSent, emailNotSent }: Props) => {
             </div>
           </div>
         </form>
-        <div className="flex z-[1] w-64 justify-between m-8 mt-0">
+        <div className="flex z-[1] w-64 justify-between m-8 mt-0 ">
           <a href="https://www.linkedin.com/in/karsten-cole/" target="_blank">
             <img
               draggable="false"

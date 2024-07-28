@@ -2,7 +2,7 @@ import SubHeader from "../../components/ui/SubHeader.tsx";
 
 interface Props {
   textStyle?: string;
-  handleClick: () => void;
+  handleClick?: () => void;
 }
 
 const AboutMeArrow = ({ textStyle, handleClick }: Props) => {
