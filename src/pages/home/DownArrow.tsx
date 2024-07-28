@@ -8,7 +8,7 @@ const DownArrow = ({ id }: Props) => {
   };
 
   return (
-    <div className="absolute bottom-[-10px] w-full flex justify-center max-[700px]:opacity-0">
+    <div className="absolute bottom-[-10px] w-full flex justify-center">
       <div onClick={handleClick}>
         <svg
           id={id}
@@ -17,6 +17,7 @@ const DownArrow = ({ id }: Props) => {
           viewBox="0 0 91 99"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="max-[700px]:w-[75%] max-[700px]:m-auto"
         >
           <path
             id={id + "-head"}

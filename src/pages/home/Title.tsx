@@ -3,25 +3,27 @@ import SubHeader from "../../components/ui/SubHeader.tsx";
 
 const Title = () => {
   return (
-    <div
-      className={"h-screen w-full flex justify-center items-center flex-col"}
-    >
+    <>
       <div
-        id="header"
-        className="flex max-[1140px]:flex-col max-[1140px]:text-center"
+        className={"h-screen w-full flex justify-center items-center flex-col"}
       >
-        <Header textStyle="text-transparent text-stroke-primary z-0">
-          Hey I'm
-        </Header>{" "}
-        <div className="m-[8px] max-[1140px]:m-0"></div>
-        <Header textStyle="text-primary z-0">Karsten Cole</Header> <br />
+        <div
+          id="header"
+          className="flex max-[1140px]:flex-col max-[1140px]:text-center"
+        >
+          <Header textStyle="text-transparent text-stroke-primary z-0">
+            Hey I'm
+          </Header>{" "}
+          <div className="m-[8px] max-[1140px]:m-0"></div>
+          <Header textStyle="text-primary z-0">Karsten Cole</Header> <br />
+        </div>
+        <div id="subheader" className="flex max-[1140px]:text-center">
+          <SubHeader textStyle="text-secondary z-0">
+            Fullstack Developer & Designer
+          </SubHeader>
+        </div>
       </div>
-      <div id="subheader" className="flex max-[1140px]:text-center">
-        <SubHeader textStyle="text-secondary z-0">
-          Fullstack Developer & Designer
-        </SubHeader>
-      </div>
-    </div>
+    </>
   );
 };
 

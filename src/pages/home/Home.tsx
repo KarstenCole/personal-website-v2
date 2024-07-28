@@ -1,7 +1,7 @@
 import Title from "../../pages/home/Title.tsx";
-import DownArrow from "../../pages/home/DownArrow.tsx";
 import AboutMeArrow from "../../pages/home/AboutMeArrow.tsx";
 import { useEffect } from "react";
+import DownArrow from "./DownArrow.tsx";
 
 interface Props {
   handleClick: () => void;
