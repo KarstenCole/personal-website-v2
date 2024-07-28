@@ -29,16 +29,16 @@ const Timeline = ({ style, cardProps }: Props) => {
             key={index}
             className={
               index % 2 === 0
-                ? "flex flex-row items-center ml-[170px] max-[1340px]:ml-0 mt-20 max-[640px]:flex-col max-[475px]:mt-5"
-                : "flex flex-row-reverse max-[1340px]:flex-row max-[1340px]:mr-0  items-center mr-[170px] mt-20 max-[640px]:flex-col max-[475px]:mt-5"
+                ? "flex flex-row items-center ml-[170px] max-[1340px]:ml-0 mt-20 max-[720px]:flex-col max-[475px]:mt-5"
+                : "flex flex-row-reverse max-[1340px]:flex-row max-[1340px]:mr-0  items-center mr-[170px] mt-20 max-[720px]:flex-col max-[475px]:mt-5"
             }
           >
-            <SubHeader textStyle="text-secondary m-10 !text-[35px] max-[640px]:text-[45px] max-[640px]:mb-6">
-              <div className="text-center max-[640px]:flex">
+            <SubHeader textStyle="text-secondary m-10 !text-[35px] max-[720px]:text-[45px] max-[720px]:mb-6">
+              <div className="text-center max-[720px]:flex">
                 <SubHeader textStyle="text-secondary">{item[3]}</SubHeader>
-                <div className="max-[640px]:w-3 max-[475px]:w-1"></div>
+                <div className="max-[720px]:w-3 max-[475px]:w-1"></div>
                 <SubHeader textStyle="text-secondary">{item[4]}</SubHeader>
-                <div className="min-[640px]:hidden">
+                <div className="min-[720px]:hidden">
                   <SubHeader textStyle="text-secondary">:</SubHeader>
                 </div>
               </div>

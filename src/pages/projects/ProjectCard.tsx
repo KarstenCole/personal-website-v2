@@ -10,8 +10,8 @@ interface Props {
 
 const ProjectCard = ({ title, tagLine1, img, link }: Props) => {
   return (
-    <div className="w-[450px] max-[1414px]:w-[600px] max-[1030px]:w-[450px] max-[470px]:w-[400px] bg-dark-background text-center rounded-xl pb-2 max-[430px]:w-[300px] mb-20">
-      <SubHeader textStyle="text-secondary mt-2 leading-[50px] mb-2">
+    <div className="w-[450px] max-[1414px]:w-[600px] max-[1030px]:w-[450px] max-[475px]:w-[400px] bg-dark-background text-center rounded-xl pb-2 max-[430px]:w-[300px] mb-20 max-[475px]:mb-7">
+      <SubHeader textStyle="text-secondary mt-3 leading-[50px] mb-3 max-[475px]:m-1">
         {title}
       </SubHeader>
       <a href={link} target="_blank">
