@@ -45,7 +45,7 @@ const Background = ({ children, page, aboutMePage }: Props) => {
   }, [bgShuffleID, BackgroundTexture, BackgroundTextures]);
 
   return (
-    <div id="page-wrapper" className="select-none -z-50">
+    <div id="page-wrapper" className={"select-none -z-50 "}>
       <div
         id="background-wrapper"
         className="fixed top-0 z-10 left-0 h-screen w-screen overflow-hidden"

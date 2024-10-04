@@ -26,6 +26,7 @@ function App() {
   const handlingClick = useRef(false);
   const handlingContact = useRef(false);
   const [errorMesssage, setErrorMessage] = useState<string | undefined>("");
+  const [position, setPosition] = useState("auto");
 
   // Intro Scroll Animation
   useEffect(() => {
@@ -148,6 +149,7 @@ function App() {
             ease: "power1",
             onComplete: () => {
               setMainPage(!main);
+              setPosition("hidden");
             },
           },
           "<"
@@ -197,6 +199,7 @@ function App() {
             onComplete: () => {
               setAboutMePage(main);
               handlingClick.current = false;
+              setPosition("auto");
             },
           },
           "<"
@@ -251,7 +254,7 @@ function App() {
   };
 
   return (
-    <div id="page" className="">
+    <div id="page">
       <NameLogo id="name-logo" color={highlight}></NameLogo>
       <Background aboutMePage={aboutMePage} page={page}>
         <div id="transition-wrapper">
@@ -310,16 +313,18 @@ function App() {
         {mainPage && (
           <div id="main-page">
             <Home handleClick={handleAboutMeClick}></Home>
-            <Projects id="projects"></Projects>
-            <WorkHistory></WorkHistory>
-            <Contact
-              emailSent={handleEmailSent}
-              emailNotSent={handleEmailSent}
-            ></Contact>
+            <div className={position}>
+              <Projects id="projects"></Projects>
+              <WorkHistory></WorkHistory>
+              <Contact
+                emailSent={handleEmailSent}
+                emailNotSent={handleEmailSent}
+              ></Contact>
+            </div>
           </div>
         )}
         {aboutMePage && (
-          <div id="about-me-page">
+          <div id="about-me-page" className={mainPage ? "hidden" : ""}>
             <AboutMe handleClick={handleAboutMeClick}></AboutMe>
           </div>
         )}

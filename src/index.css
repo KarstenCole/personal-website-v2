@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .font-outfit {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
@@ -18,42 +17,39 @@
 }
 
 .text-stroke-primary {
-  color: #181A1D;
-	text-shadow: -1px 1px 0 #EEEEEE,
-				  1px 1px 0 #EEEEEE,
-				 1px -1px 0 #EEEEEE,
-				-1px -1px 0 #EEEEEE;  
+  color: #181a1d;
+  text-shadow: -1px 1px 0 #eeeeee, 1px 1px 0 #eeeeee, 1px -1px 0 #eeeeee,
+    -1px -1px 0 #eeeeee;
 }
 
-body{
-  background-color: #181A1D;
+body {
+  background-color: #181a1d;
 }
 
-html{
+html {
   overflow-x: hidden;
-  
 }
 
-.bg-primary-gradient{
+.bg-primary-gradient {
   background-image: url("/PrimaryGradient.png");
   background-attachment: fixed;
   background-position: top left;
-  background-size:cover;
+  background-size: cover;
 }
 
-.bg-secondary-gradient{
+.bg-secondary-gradient {
   background-image: url("/SecondaryGradient.png");
   background-attachment: fixed;
   background-position: top left;
-  background-size:cover;
+  background-size: cover;
 }
 
-input{
+input {
   position: relative;
   z-index: 10;
 }
 
-#background-wrapper{
+#background-wrapper {
   pointer-events: none;
 }
 
@@ -65,7 +61,7 @@ input{
   overflow: visible !important; /* or any other value you want */
 }
 
-#about-me-page{
+#about-me-page {
   position: relative;
 }
 
