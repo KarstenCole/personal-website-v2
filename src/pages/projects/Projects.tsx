@@ -17,6 +17,12 @@ const Projects = ({ id }: Props) => {
       >
         <div className="flex flex-col mr-20 max-[1414px]:mr-0">
           <ProjectCard
+            title="Pure Skin AI"
+            img="assets/PureSkinAi.jpg"
+            tagLine1={["React", "TypeScript", "Voiceflow", "Bland AI"]}
+            link="https://github.com/KarstenCole/pure-skin-ai"
+          ></ProjectCard>
+          <ProjectCard
             title="Galaxy Shooter"
             img="assets/GalaxyShooter.png"
             tagLine1={["Java"]}

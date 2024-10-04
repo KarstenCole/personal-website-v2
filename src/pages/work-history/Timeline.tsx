@@ -23,7 +23,7 @@ const Timeline = ({ style, cardProps }: Props) => {
         />
       </svg>
       <div className="relative flex flex-col items-center mt-2 max-[1340px]:-mt-[70px]">
-        <div className="h-[1150px] w-[12px] bg-primary absolute top-0 max-[1340px]:hidden"></div>
+        <div className="h-[1450px] w-[12px] bg-primary absolute top-0 max-[1340px]:hidden"></div>
         {cardProps?.map((item, index) => (
           <div
             key={index}

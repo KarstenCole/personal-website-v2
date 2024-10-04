@@ -8,6 +8,14 @@ const WorkHistory = () => {
       <Timeline
         cardProps={[
           [
+            "InspireFly",
+            "assets/inspirefly.png",
+            "RESEARCHER",
+            "2024 - ",
+            "Present",
+            " - Collaborated with the research and development team to create a satellite for NASA’s CubeSat Launch initiative.",
+          ],
+          [
             "Comik Ink",
             "assets/ComikInk.png",
             "GRAPHIC DESIGNER",
